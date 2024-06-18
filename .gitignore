@@ -81,3 +81,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ee]ditor/x64/[Bb]akery/*
 /[Aa]ssets/[Bb]akery.meta
 /[Aa]ssets/[Ee]ditor/x64/[Bb]akery.meta
+
+#textmeshpro
+/[Aa]ssets/TextMesh*Pro/
+/[Aa]ssets/SerializedUdonPrograms
