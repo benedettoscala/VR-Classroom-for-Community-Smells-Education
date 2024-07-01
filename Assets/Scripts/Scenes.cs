@@ -20,7 +20,7 @@ public class Scenes : UdonSharpBehaviour
     private int _BCEAnimation = 0;
 
     private int BCEAnimation
-    {   
+    {
         get => BCEDummy.GetComponentInChildren<Animator>().GetInteger("BCEAnimationValue");
         set
         {
@@ -43,7 +43,6 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
-
     [UdonSynced, FieldChangeCallback(nameof(ChangeSceneVariable))]
     private bool _changeSceneVariable = false;
 
@@ -60,12 +59,25 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+    [UdonSynced, FieldChangeCallback(nameof(BCEDummyActive))]
+    private bool _BCEDummyActive = false;
+
+    private bool BCEDummyActive
+    {
+        get => _BCEDummyActive;
+        set
+        {
+            _BCEDummyActive = value;
+            BCEDummy.SetActive(_BCEDummyActive);
+        }
+    }
+
     public void ChangeScene()
     {
         ChangeSceneVariable = true;
     }
 
-    public void ChangeSceneUtil()
+    private void ChangeSceneUtil()
     {
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         Debug.Log("Cambio scena...");
@@ -106,13 +118,17 @@ public class Scenes : UdonSharpBehaviour
     public void BCEButtonSelected()
     {
         Debug.Log("BCE Button Selected");
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
         ToggleUIElements(false, true, true, true);
+        BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
     public void backToSmellsButton()
     {
         Debug.Log("Back to Smells Button");
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
         ToggleUIElements(true, false, false, false);
+        BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
     private void ToggleUIElements(bool smells, bool bceButtons, bool bceDummy, bool backToSmells)
