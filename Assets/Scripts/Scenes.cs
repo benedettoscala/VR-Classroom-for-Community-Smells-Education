@@ -1,10 +1,19 @@
-﻿using UdonSharp;
+﻿using System.Collections.Generic;
+using BestHTTP.SecureProtocol.Org.BouncyCastle.Asn1.Sec;
+using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
 public class Scenes : UdonSharpBehaviour
 {
+    //TODO sta classe è palesemente una god class, bisognerebbe rifattorizzarla
+    public Material[] materialsFirstScene;
+    public Material[] materialsSecondScene;
+
+    
+    public GameObject[] changeSceneObject;
+
     public Animator animFirstScene;
     public Animator animSecondScene;
 
@@ -38,7 +47,7 @@ public class Scenes : UdonSharpBehaviour
         set
         {
             _animationActive = value;
-            secondScene.SetActive(_animationActive);
+            //secondScene.SetActive(_animationActive);
             SetSceneAnimationState(value);
         }
     }
@@ -52,10 +61,7 @@ public class Scenes : UdonSharpBehaviour
         set
         {
             _changeSceneVariable = value;
-            if (_changeSceneVariable)
-            {
-                ChangeSceneUtil();
-            }
+            ChangeSceneUtil();
         }
     }
 
@@ -72,17 +78,37 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+
+
+
     public void ChangeScene()
     {
-        ChangeSceneVariable = true;
+        //setto l'owner a questo oggetto per poter sincronizzare le variabili
+        //ed anche perchè senza di lui non funza nulla
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        ChangeSceneVariable = !ChangeSceneVariable;
+        Debug.Log("ChangeSceneVariable: " + ChangeSceneVariable);
     }
 
     private void ChangeSceneUtil()
     {
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
         Debug.Log("Cambio scena...");
-        SetSceneRigidbodies(firstScene, true);
-        AnimationActive = true;
+        SetSceneRigidbodies(firstScene, ChangeSceneVariable);
+        SetSceneRigidbodies(secondScene, !ChangeSceneVariable);
+
+        // Cambia i materiali della prima scena in quelli della seconda scena, in 
+        // change scene object ci sono gli oggetti che cambiano materiale, gli oggetti sono ordinati
+        // in modo che il primo oggetto abbia il primo materiale, il secondo il secondo e così via
+        for (int i = 0; i < changeSceneObject.Length; i++)
+        {
+            if(ChangeSceneVariable)
+                changeSceneObject[i].GetComponent<Renderer>().material = materialsSecondScene[i];
+            else
+                changeSceneObject[i].GetComponent<Renderer>().material = materialsFirstScene[i];
+        }
+
+
+        AnimationActive = !AnimationActive;
     }
 
     private void SetAnimatorParameters(GameObject obj, string parameter, int value)
