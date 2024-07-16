@@ -14433,6 +14433,7 @@ GameObject:
   - component: {fileID: 761447540}
   - component: {fileID: 761447539}
   - component: {fileID: 761447538}
+  - component: {fileID: 8350486620099775565}
   m_Layer: 13
   m_Name: Cylinder.020
   m_TagString: Untagged
@@ -14785,6 +14786,7 @@ GameObject:
   - component: {fileID: 1450398104}
   - component: {fileID: 1450398103}
   - component: {fileID: 1450398102}
+  - component: {fileID: 7296604958416391360}
   m_Layer: 13
   m_Name: Cylinder.018
   m_TagString: Untagged
@@ -18732,6 +18734,7 @@ GameObject:
   - component: {fileID: 938397561}
   - component: {fileID: 938397560}
   - component: {fileID: 938397559}
+  - component: {fileID: 5076333061187026868}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -20319,6 +20322,7 @@ GameObject:
   - component: {fileID: 847333345}
   - component: {fileID: 847333344}
   - component: {fileID: 847333343}
+  - component: {fileID: 8193200424149755994}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -21590,6 +21594,7 @@ GameObject:
   - component: {fileID: 1563486414}
   - component: {fileID: 1563486413}
   - component: {fileID: 1563486412}
+  - component: {fileID: 7664345429812031610}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -21927,6 +21932,7 @@ GameObject:
   - component: {fileID: 203911608}
   - component: {fileID: 203911607}
   - component: {fileID: 203911606}
+  - component: {fileID: 4358550971473808986}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -22169,6 +22175,7 @@ GameObject:
   - component: {fileID: 1075746854}
   - component: {fileID: 1075746853}
   - component: {fileID: 1075746852}
+  - component: {fileID: 6148596154577793990}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -22906,6 +22913,7 @@ GameObject:
   - component: {fileID: 1302397840}
   - component: {fileID: 1302397839}
   - component: {fileID: 1302397838}
+  - component: {fileID: 8703748339868362284}
   m_Layer: 13
   m_Name: Cylinder.019
   m_TagString: Untagged
@@ -22927,6 +22935,7 @@ GameObject:
   - component: {fileID: 1853206972}
   - component: {fileID: 1853206971}
   - component: {fileID: 1853206970}
+  - component: {fileID: 7934638894240091784}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -24003,6 +24012,7 @@ GameObject:
   - component: {fileID: 1805494548}
   - component: {fileID: 1805494547}
   - component: {fileID: 1805494546}
+  - component: {fileID: 8292283135732269041}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -25217,6 +25227,7 @@ GameObject:
   - component: {fileID: 401099502}
   - component: {fileID: 401099501}
   - component: {fileID: 401099500}
+  - component: {fileID: 6426448319651955300}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -25580,6 +25591,7 @@ GameObject:
   - component: {fileID: 418356496}
   - component: {fileID: 418356495}
   - component: {fileID: 418356494}
+  - component: {fileID: 7983571505309100651}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -26112,6 +26124,7 @@ GameObject:
   - component: {fileID: 1981315973}
   - component: {fileID: 1981315972}
   - component: {fileID: 1981315971}
+  - component: {fileID: 7945137533314458410}
   m_Layer: 13
   m_Name: Cylinder.021
   m_TagString: Untagged
@@ -26875,6 +26888,7 @@ GameObject:
   - component: {fileID: 829981458}
   - component: {fileID: 829981457}
   - component: {fileID: 829981456}
+  - component: {fileID: 8218352543272406307}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -27159,6 +27173,7 @@ GameObject:
   - component: {fileID: 1297533808}
   - component: {fileID: 1297533807}
   - component: {fileID: 1297533806}
+  - component: {fileID: 9129727725865948402}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -27710,6 +27725,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4358550971473808986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586130242368323144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &4362382488961038614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28345,6 +28373,7 @@ GameObject:
   - component: {fileID: 955335633}
   - component: {fileID: 955335632}
   - component: {fileID: 955335631}
+  - component: {fileID: 7606134585109137993}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -29899,6 +29928,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410003272062148320}
   m_Mesh: {fileID: -7670211680578305084, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &5076333061187026868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410003272062148320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!4 &5080741587743503647
 Transform:
   m_ObjectHideFlags: 0
@@ -29928,6 +29970,7 @@ GameObject:
   - component: {fileID: 2126669462}
   - component: {fileID: 2126669461}
   - component: {fileID: 2126669460}
+  - component: {fileID: 9192210563338099365}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -30457,6 +30500,7 @@ GameObject:
   - component: {fileID: 1250821080}
   - component: {fileID: 1250821079}
   - component: {fileID: 1250821078}
+  - component: {fileID: 7743480365473248160}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -33426,6 +33470,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6148596154577793990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2646134610912153130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &6157169717738192946
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33769,6 +33826,7 @@ GameObject:
   - component: {fileID: 1917023481}
   - component: {fileID: 1917023480}
   - component: {fileID: 1917023479}
+  - component: {fileID: 6344692269546944265}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -33981,6 +34039,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6308958460085603170}
   m_Mesh: {fileID: -5308210633308118684, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &6344692269546944265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308958460085603170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &6351375870310470159
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34218,6 +34289,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4471144756207569586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6426448319651955300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676624720214684547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &6427629838105012163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34511,6 +34595,7 @@ GameObject:
   - component: {fileID: 1660800000}
   - component: {fileID: 1660799999}
   - component: {fileID: 1660799998}
+  - component: {fileID: 8777296174687996459}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -35196,6 +35281,7 @@ GameObject:
   - component: {fileID: 1757719287}
   - component: {fileID: 1757719286}
   - component: {fileID: 1757719285}
+  - component: {fileID: 7924007671613947848}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -35946,6 +36032,7 @@ GameObject:
   - component: {fileID: 2120568129}
   - component: {fileID: 2120568128}
   - component: {fileID: 2120568127}
+  - component: {fileID: 6919683765413514792}
   m_Layer: 13
   m_Name: Pen
   m_TagString: Untagged
@@ -35953,6 +36040,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6919683765413514792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919683765413514791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!4 &6922476209938940191
 Transform:
   m_ObjectHideFlags: 0
@@ -36788,25 +36888,11 @@ MonoBehaviour:
   - {fileID: 5062710632527318703, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 7270216656032864550, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 2100000, guid: bc2f61f02bf04d94e84459602830f2ca, type: 2}
-  - {fileID: 2100000, guid: c574e39d46c50c447a4ba1d2e965b995, type: 2}
-  - {fileID: 2100000, guid: 9095671f19958dc4eb7ebfb0821de744, type: 2}
-  - {fileID: 2100000, guid: ddb7c159a89eac44aba126bfabb419da, type: 2}
-  - {fileID: 2100000, guid: 0d331428296cee94d9e1fdb4716e46e2, type: 2}
-  - {fileID: 2100000, guid: 758b8f8fcc3c21b47814b885f2483f84, type: 2}
-  - {fileID: 2100000, guid: d1e13426979f2bb449b5519f35ac4a08, type: 2}
-  - {fileID: 2100000, guid: eae96cd9cf34ef04d937d2426a12c585, type: 2}
-  - {fileID: 2100000, guid: b1fdcbda1fe46d24fb8343bbd719d116, type: 2}
-  - {fileID: 2100000, guid: 8db6f409af112ec4dafd6d053611dc15, type: 2}
-  - {fileID: 2100000, guid: 7c24bbab2351b35459d65aa565e62d48, type: 2}
-  - {fileID: 2100000, guid: e7881e17ee2990d4cbafc5c5e5af92a0, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: dfc50e95fd4bd8945bae497289b94858, type: 2}
-  - {fileID: 2100000, guid: fc9e4b256393bea4a9f46a4fd040c6ea, type: 2}
-  - {fileID: 2100000, guid: 4c86d8968d2d07e4db3f447c225cc075, type: 2}
   - {fileID: 626059186593630501, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 2100000, guid: 27b37ba76ebb1374ca21eb77c719d3b2, type: 2}
   - {fileID: -7198559261415225722, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 2100000, guid: b73653b4f56c9fb4183478796ae62353, type: 2}
+  - {fileID: 2100000, guid: fc9e4b256393bea4a9f46a4fd040c6ea, type: 2}
   - {fileID: -4088923845222794430, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: -8502832342780433230, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 268817352499987617, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
@@ -36816,13 +36902,22 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c24c55cfdac0a5a4cb177ca70e316303, type: 2}
   - {fileID: 2100000, guid: 8fb3922e4ba63164fad31f170515809a, type: 2}
   - {fileID: 2100000, guid: fb292c9d3b000504fa58707b3439f1a0, type: 2}
+  - {fileID: 2100000, guid: 758b8f8fcc3c21b47814b885f2483f84, type: 2}
   - {fileID: 2100000, guid: 23a896647b3338a4b88a8d0c27c10a0d, type: 2}
+  - {fileID: 2100000, guid: 9095671f19958dc4eb7ebfb0821de744, type: 2}
   - {fileID: 2100000, guid: 66f07cdd0db580e4e98461e7238e1d7a, type: 2}
   - {fileID: 2100000, guid: 8192e1df109b39042b8ee57c194a2bf1, type: 2}
   - {fileID: 2100000, guid: 6c32f55076e85c34c976a70158992638, type: 2}
+  - {fileID: 2100000, guid: b1fdcbda1fe46d24fb8343bbd719d116, type: 2}
+  - {fileID: 2100000, guid: eae96cd9cf34ef04d937d2426a12c585, type: 2}
+  - {fileID: 2100000, guid: 8db6f409af112ec4dafd6d053611dc15, type: 2}
+  - {fileID: 2100000, guid: 7c24bbab2351b35459d65aa565e62d48, type: 2}
+  - {fileID: 2100000, guid: d1e13426979f2bb449b5519f35ac4a08, type: 2}
   - {fileID: 2100000, guid: 16a5def651820734eabdbecd232c24b7, type: 2}
   - {fileID: 2100000, guid: 1184f0707513afc408a0ab1189b6268b, type: 2}
+  - {fileID: 2100000, guid: 0d331428296cee94d9e1fdb4716e46e2, type: 2}
   - {fileID: 2100000, guid: e001fac2fcf279a4fb0e7255ac9521e4, type: 2}
+  - {fileID: 2100000, guid: ddb7c159a89eac44aba126bfabb419da, type: 2}
   - {fileID: 2100000, guid: 5b86aca89c26bc94bb696f0ec72ecc1e, type: 2}
   - {fileID: 2100000, guid: 4a1d4d8e630614840b1499f70c6e064a, type: 2}
   - {fileID: 2100000, guid: 7dd5263febe3c2e4abb27bcd323da72a, type: 2}
@@ -36844,6 +36939,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5574a095281c011448df7db8a900cb7f, type: 2}
   - {fileID: 2100000, guid: 79dcbe74b35d0fd4ba9ccd11205e8d52, type: 2}
   - {fileID: 2100000, guid: 0f1482e2259047b418d98437d1bfa3cf, type: 2}
+  - {fileID: 2100000, guid: c574e39d46c50c447a4ba1d2e965b995, type: 2}
+  - {fileID: 2100000, guid: e7881e17ee2990d4cbafc5c5e5af92a0, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dfc50e95fd4bd8945bae497289b94858, type: 2}
+  - {fileID: 2100000, guid: 4c86d8968d2d07e4db3f447c225cc075, type: 2}
   - {fileID: 2100000, guid: 5430332e7a275f5458e0224feb69b399, type: 2}
   - {fileID: 6067029341448329871, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
   - {fileID: 5807611525869308717, guid: 6f32a2258302abf45ac949a08588ece5, type: 3}
@@ -36929,170 +37029,191 @@ MonoBehaviour:
   RenderReflectionIntensity: 0
   RenderSkybox: {fileID: 0}
   NetworkIDs:
-  - gameObject: {fileID: 8716959939381402680}
+  - gameObject: {fileID: 3392075990578548675}
     ID: 10
     SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 270841952771465277}
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 55118370}
     ID: 11
     SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 2970211864727606872}
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 138738995}
     ID: 12
     SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 224588403556222956}
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 1248742770}
     ID: 13
     SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 3905804243201783875}
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 738151249}
     ID: 14
     SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 407070276}
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 75337329}
     ID: 15
     SerializedTypeNames:
     - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 1838255691}
-    ID: 36
+  - gameObject: {fileID: 1709493749}
+    ID: 16
     SerializedTypeNames:
     - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 161915558}
+    ID: 17
+    SerializedTypeNames:
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 648879633}
+    ID: 18
+    SerializedTypeNames:
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 292284360}
+    ID: 19
+    SerializedTypeNames:
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 2428803481292077417}
+    ID: 20
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 3324718804524467868}
+    ID: 21
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 6919683765413514791}
+    ID: 22
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 5245042009431847236}
+    ID: 23
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 8338213260814026315}
+    ID: 24
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 7544262733492646788}
+    ID: 25
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 2646134610912153130}
+    ID: 26
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 4214726984741109790}
+    ID: 27
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 3776150472099948031}
+    ID: 28
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 2017385449856204848}
+    ID: 29
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 4160148092714772299}
+    ID: 30
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 6308958460085603170}
+    ID: 31
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 5081950693585034954}
+    ID: 32
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 1410003272062148320}
+    ID: 33
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 2971542038203596758}
+    ID: 34
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 4587071258668915354}
+    ID: 35
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 6691252927680776041}
+    ID: 36
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 2586130242368323144}
+    ID: 37
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 6512510687058709337}
+    ID: 38
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 3676624720214684547}
+    ID: 39
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
   - gameObject: {fileID: 522021148}
-    ID: 57
+    ID: 40
     SerializedTypeNames:
     - VRC.Udon.UdonBehaviour
     - VRC.SDK3.Components.VRCPickup
     - VRC.Udon.UdonBehaviour
     - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 8716959939381402680}
+    ID: 41
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 270841952771465277}
+    ID: 42
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 2970211864727606872}
+    ID: 43
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 224588403556222956}
+    ID: 44
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
+  - gameObject: {fileID: 3905804243201783875}
+    ID: 45
+    SerializedTypeNames:
+    - VRC.SDK3.Components.VRCPickup
+    - VRC.SDK3.Components.VRCObjectSync
   - gameObject: {fileID: 522021149}
-    ID: 58
+    ID: 46
+    SerializedTypeNames:
+    - VRC.Udon.UdonBehaviour
+  - gameObject: {fileID: 1838255691}
+    ID: 47
     SerializedTypeNames:
     - VRC.Udon.UdonBehaviour
   - gameObject: {fileID: 3480278762663670689}
-    ID: 59
+    ID: 48
     SerializedTypeNames:
     - VRC.Udon.UdonBehaviour
     - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 3392075990578548675}
-    ID: 60
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 55118370}
-    ID: 61
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 138738995}
-    ID: 62
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 1248742770}
-    ID: 63
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 738151249}
-    ID: 64
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 75337329}
-    ID: 65
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 1709493749}
-    ID: 66
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 161915558}
-    ID: 67
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 648879633}
-    ID: 68
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 292284360}
-    ID: 69
-    SerializedTypeNames:
-    - VRC.Udon.UdonBehaviour
-  - gameObject: {fileID: 2428803481292077417}
-    ID: 70
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 3324718804524467868}
-    ID: 71
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 6919683765413514791}
-    ID: 72
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 5245042009431847236}
-    ID: 73
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 8338213260814026315}
-    ID: 74
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 7544262733492646788}
-    ID: 75
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 2646134610912153130}
-    ID: 76
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 4214726984741109790}
-    ID: 77
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 3776150472099948031}
-    ID: 78
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 2017385449856204848}
-    ID: 79
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 4160148092714772299}
-    ID: 80
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 6308958460085603170}
-    ID: 81
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 5081950693585034954}
-    ID: 82
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 1410003272062148320}
-    ID: 83
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 2971542038203596758}
-    ID: 84
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 4587071258668915354}
-    ID: 85
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 6691252927680776041}
-    ID: 86
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 2586130242368323144}
-    ID: 87
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 6512510687058709337}
-    ID: 88
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
-  - gameObject: {fileID: 3676624720214684547}
-    ID: 89
-    SerializedTypeNames:
-    - VRC.SDK3.Components.VRCPickup
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!23 &7118912653072163129
@@ -38042,6 +38163,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5001209135325801547}
   m_LocalEulerAnglesHint: {x: -11.986, y: -2.769, z: -151.256}
+--- !u!114 &7296604958416391360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270841952771465277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &7298658739190597654
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38952,6 +39086,7 @@ GameObject:
   - component: {fileID: 1505446969}
   - component: {fileID: 1505446968}
   - component: {fileID: 1505446967}
+  - component: {fileID: 8010269898781986779}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -39141,6 +39276,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4587071258668915354}
   m_Mesh: {fileID: 6405055333489277325, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &7606134585109137993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587071258668915354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!1 &7623709383644500221
 GameObject:
   m_ObjectHideFlags: 0
@@ -39285,6 +39433,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2428803481292077417}
   m_Mesh: {fileID: 4600452066461677396, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &7664345429812031610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2428803481292077417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &7676734419673227646
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39610,6 +39771,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7743480365473248160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245042009431847236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &7745123315777133958
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40065,6 +40239,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4471144756207569586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7924007671613947848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691252927680776041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &7928614567859556914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40210,6 +40397,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7934638894240091784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971542038203596758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!1 &7936730140183109255
 GameObject:
   m_ObjectHideFlags: 0
@@ -40292,6 +40492,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905804243201783875}
   m_Mesh: {fileID: 6357616769542740209, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &7945137533314458410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905804243201783875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!1 &7959026430255284005
 GameObject:
   m_ObjectHideFlags: 0
@@ -40488,6 +40701,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7983571505309100651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776150472099948031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &7984014428118542195
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40575,6 +40801,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7544262733492646788}
   m_Mesh: {fileID: -1480120536518109596, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &8010269898781986779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544262733492646788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &8010559482274568054
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41269,6 +41508,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8193200424149755994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017385449856204848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &8203880984387193261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41467,6 +41719,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1546587516365974143}
   m_LocalEulerAnglesHint: {x: -0.982, y: 99.148, z: 0.19}
+--- !u!114 &8218352543272406307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160148092714772299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &8220830672899617238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41907,6 +42172,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324718804524467868}
   m_Mesh: {fileID: -3468358222005285177, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &8292283135732269041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324718804524467868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &8299311500496922740
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42101,6 +42379,7 @@ GameObject:
   - component: {fileID: 874534776}
   - component: {fileID: 874534775}
   - component: {fileID: 874534774}
+  - component: {fileID: 8338213260814026316}
   m_Layer: 13
   m_Name: Notebook
   m_TagString: Untagged
@@ -42108,6 +42387,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8338213260814026316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338213260814026315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!1 &8340104195615996243
 GameObject:
   m_ObjectHideFlags: 0
@@ -42205,6 +42497,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8350486620099775565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224588403556222956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!4 &8358176319927402981
 Transform:
   m_ObjectHideFlags: 0
@@ -43589,6 +43894,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2970211864727606872}
   m_Mesh: {fileID: -5746147162638082140, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &8703748339868362284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970211864727606872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!4 &8713594904553004536
 Transform:
   m_ObjectHideFlags: 0
@@ -43618,6 +43936,7 @@ GameObject:
   - component: {fileID: 1661275046}
   - component: {fileID: 1661275045}
   - component: {fileID: 1661275044}
+  - component: {fileID: 8719027170516220048}
   m_Layer: 13
   m_Name: Cylinder.017
   m_TagString: Untagged
@@ -43676,6 +43995,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5001209135325801547}
   m_LocalEulerAnglesHint: {x: -7.557, y: 15.195, z: 159.608}
+--- !u!114 &8719027170516220048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716959939381402680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!33 &8721747744132506051
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43768,6 +44100,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6512510687058709337}
   m_Mesh: {fileID: 3163171260390484736, guid: aed525c84aee94b4295d3774bbc005c3, type: 3}
+--- !u!114 &8777296174687996459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512510687058709337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &8788100869976423251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44840,6 +45185,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9129727725865948402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4214726984741109790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!23 &9132745562524491192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45009,6 +45367,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6509410893870042177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9192210563338099365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081950693585034954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowCollisionOwnershipTransfer: 1
 --- !u!1 &9202057878971254039
 GameObject:
   m_ObjectHideFlags: 0
