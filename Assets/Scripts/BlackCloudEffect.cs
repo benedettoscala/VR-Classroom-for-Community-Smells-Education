@@ -1,7 +1,5 @@
 ﻿
-using System.Net.Mail;
 using UdonSharp;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
