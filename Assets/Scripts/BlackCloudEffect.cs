@@ -6,6 +6,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 
 
+//TODO: SINCRONIZZARE LA CLASSE PER I VARI CLIENT(sarà una gran rottura)
 public class BlackCloudEffect : UdonSharpBehaviour
 {
 
@@ -22,6 +23,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     public Animator papersAnimator;
 
+    public Telefono telefono;
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         //deactivate slider
         slider.gameObject.SetActive(false);
         action2.SetActive(false);
+        telefono.gameObject.SetActive(false);
     }
 
     void Update()
@@ -102,7 +105,6 @@ public class BlackCloudEffect : UdonSharpBehaviour
             L’insegnante spiega chi sono, cosa stanno facendo e qual è la situazione del progetto. 
         ***/
         changeAlphaValueCloud(0.1f);
-        
         slider.gameObject.SetActive(true);
         action1Slider = true;  
     }
@@ -163,5 +165,10 @@ public class BlackCloudEffect : UdonSharpBehaviour
         rappresentanti i molti messaggi che il manager sta ricevendo da tutto il team.
         La barra di avanzamento è ora di colore rosso ed è quasi giunta alla fine. 
         ***/
+        slider.gameObject.SetActive(true);
+        telefono.gameObject.SetActive(true);
+        telefono.activateSmartphoneAnimation();
+        //change fill color of the slider to red
+        slider.fillRect.GetComponent<Image>().color = Color.red;
     }
 }
