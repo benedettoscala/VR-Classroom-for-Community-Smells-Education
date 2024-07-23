@@ -145,23 +145,22 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("BCE Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, true, true, true);
-        BCEDummyActive = true; // Attiva BCEDummy e sincronizza
+        ToggleUIElements(false, true, true);
+        //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
     public void backToSmellsButton()
     {
         Debug.Log("Back to Smells Button");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(true, false, false, false);
-        BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
+        ToggleUIElements(true, false, false);
+        //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
-    private void ToggleUIElements(bool smells, bool bceButtons, bool bceDummy, bool backToSmells)
+    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells)
     {
         smellsButton.SetActive(smells);
         BCEAnimationButtons.SetActive(bceButtons);
-        BCEDummy.SetActive(bceDummy);
         BackToSmellsButton.SetActive(backToSmells);
     }
 

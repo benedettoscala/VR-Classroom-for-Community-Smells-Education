@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class Telefono : UdonSharpBehaviour
+public class SmartphoneCanvas : UdonSharpBehaviour
 {
     // Parent con all'interno una serie di raw images
     public GameObject notifications;
@@ -81,5 +81,23 @@ public class Telefono : UdonSharpBehaviour
     public void activateSmartphoneAnimation()
     {
         showNotifications = true;
+    }
+
+    public void deactivataSmartphoneAnimation()
+    {
+        showNotifications = false;
+        //dacitvate all raw images
+        foreach (RawImage rawImage in rawImages)
+        {
+            rawImage.gameObject.SetActive(false);
+        }
+
+        //resets the activation timer
+        activationTimer = 0f;
+        activationInterval = 2f;
+        activatedCount = 0;
+        pulseInterval = 0.5f;
+        pulseTimer = 0f;
+        attentionImage.gameObject.SetActive(false);
     }
 }
