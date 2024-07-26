@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
+using TMPro;
 
 
 //TODO: SINCRONIZZARE LA CLASSE PER I VARI CLIENT(sarà una gran rottura)
 public class BlackCloudEffect : UdonSharpBehaviour
 {
-
+    public TextMeshProUGUI text;
     public Slider slider;
     public float velocity = 0.05f;
     public GameObject setting;
@@ -55,6 +56,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             _action1Active = value;
             slider.gameObject.SetActive(_action1Active);
+            //change text to "Scadenza della consegna"
+            text.text= "Mancano 6 giorni alla scadenza della consegna";
             actions[1].SetActive(_action1Active);
             if(_action1Active)
             {
@@ -74,6 +77,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             _action2Active = value;
             actions[2].SetActive(_action2Active);
+            text.text = "Mancano 5 giorni alla scadenza della consegna";
             slider.gameObject.SetActive(_action2Active);
             if(_action2Active)
             {
@@ -93,6 +97,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             _action3Active = value;
             actions[3].SetActive(_action3Active);
+            text.text = "Mancano 4 giorno alla scadenza della consegna";
             if(_action3Active)
             {
                 papersAnimator.SetInteger("papers", _action3Active ? 1 : 0);
@@ -111,6 +116,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         set
         {
             _action4Active = value;
+            text.text = "Mancano 3 giorni alla scadenza della consegna";
             actions[4].SetActive(_action4Active);
             if(_action4Active)
             {
@@ -130,13 +136,17 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             _action5Active = value;
             actions[5].SetActive(_action5Active);
+            text.text = "Mancano 2 giorni alla scadenza della consegna";
             telefono.gameObject.SetActive(_action5Active);
             slider.gameObject.SetActive(_action5Active);
             if(_action5Active)
             {
                 telefono.activateSmartphoneAnimation();
                 valueSliderToReach = 0.97f;
+            } else {
+                telefono.deactivateSmartphoneAnimation();
             }
+
         }
     }
 
@@ -149,6 +159,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         set
         {
             _action6Active = value;
+            text.text = "Mancano 1 giorno alla scadenza della consegna";
             actions[6].SetActive(_action6Active);
             if(_action6Active)
             {
@@ -157,6 +168,13 @@ public class BlackCloudEffect : UdonSharpBehaviour
                     computer.gameObject.SetActive(true);
                     computer.activateSmartphoneAnimation();
                 }
+            } else {
+                foreach(SmartphoneCanvas computer in computers)
+                {
+                    computer.gameObject.SetActive(false);
+                    computer.deactivateSmartphoneAnimation();
+                }
+            
             }
         }
     }
@@ -166,14 +184,19 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     bool action7Active
     {
-        get => valueSliderToReach == 1f;
+        get => _action7Active;
         set
         {
             _action7Active = value;
+            actions[7].SetActive(_action7Active);
+            //se lo slider è attivo
+            text.text = "Scaduto il tempo per la consegna";  
+    
             if(_action7Active)
             {
                 valueSliderToReach = 1f;
             }
+            
         }
     }
 
@@ -209,6 +232,10 @@ public class BlackCloudEffect : UdonSharpBehaviour
             //cambia anche il colore da verde a rosso
             slider.fillRect.GetComponent<Image>().color = Color.Lerp(Color.green, Color.red, slider.value);
         }
+
+        if(slider.value >= valueSliderToReach) {
+            slider.value = valueSliderToReach;
+        }
         
         
     }
@@ -241,7 +268,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             L’insegnante spiega chi sono, cosa stanno facendo e qual è la situazione del progetto. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action1Active = true;
+        action1Active = !action1Active;
     }
 
     public void activateAction2()
@@ -260,7 +287,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
 
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action2Active = true;
+        action2Active = !action2Active;
     }
 
     public void activateAction3()
@@ -272,7 +299,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         di informazioni che non viaggiano tra i membri del team.
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action3Active = true;
+        action3Active = !action3Active;
     }
 
     public void activateAction4()
@@ -285,7 +312,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             e che riusciranno a comunicare solo con il loro manager. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action4Active = true;
+        action4Active = !action4Active;
     }
 
     public void activateAction5()
@@ -299,7 +326,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         La barra di avanzamento è ora di colore rosso ed è quasi giunta alla fine. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action5Active = true;
+        action5Active = !action5Active;
     }
 
     public void activateAction6()
@@ -313,7 +340,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action6Active = true;
+        action6Active = !action6Active;
     }
 
     public void activateAction7()
@@ -325,6 +352,6 @@ public class BlackCloudEffect : UdonSharpBehaviour
             e il progetto è fallito. Compare infine la scritta “Black Cloud”. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action7Active = true;
+        action7Active = !action7Active;
     }
 }

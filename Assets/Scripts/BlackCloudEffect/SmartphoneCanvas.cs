@@ -11,6 +11,10 @@ public class SmartphoneCanvas : UdonSharpBehaviour
 
     bool showNotifications = false;
 
+    public AudioSource notificationAudio;
+
+
+    
     private float activationTimer = 0f;
     private float activationInterval = 2f; // Intervallo iniziale di 2 secondi
     private int activatedCount = 0;
@@ -24,6 +28,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
 
     void Start()
     {
+        notificationAudio.playOnAwake = false;
         attentionImage.gameObject.SetActive(false);
         // Recupero le raw images
         rawImages = notifications.GetComponentsInChildren<RawImage>();
@@ -50,6 +55,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
                 // Attiva la prossima rawImage
                 rawImages[activatedCount].gameObject.SetActive(true);
                 activatedCount++;
+                notificationAudio.Play(); // Suona la notifica
 
                 // Riduci l'intervallo di attivazione per la prossima notifica
                 activationInterval = Mathf.Max(0.1f, activationInterval * 0.9f); // Non scendere sotto 0.1 secondi
@@ -83,7 +89,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
         showNotifications = true;
     }
 
-    public void deactivataSmartphoneAnimation()
+    public void deactivateSmartphoneAnimation()
     {
         showNotifications = false;
         //dacitvate all raw images
