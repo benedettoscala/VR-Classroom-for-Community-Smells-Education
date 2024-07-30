@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Canvas Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: ce1973df26ac03d49a31dd3348d5eb17,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: cd6c26b9f66365e4cbd3641d6334b4c1,
     type: 2}
   udonAssembly: 
   assemblyError: 

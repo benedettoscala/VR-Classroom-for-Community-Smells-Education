@@ -48,6 +48,8 @@ public class SmartphoneCanvas : UdonSharpBehaviour
             
             if (activationTimer >= activationInterval && activatedCount < rawImages.Length)
             {
+                
+
                 if(activatedCount >= 4) 
                 {
                     attentionImage.gameObject.SetActive(true);
@@ -55,6 +57,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
                 // Attiva la prossima rawImage
                 rawImages[activatedCount].gameObject.SetActive(true);
                 activatedCount++;
+                
                 notificationAudio.Play(); // Suona la notifica
 
                 // Riduci l'intervallo di attivazione per la prossima notifica
@@ -87,6 +90,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
     public void activateSmartphoneAnimation()
     {
         showNotifications = true;
+       
     }
 
     public void deactivateSmartphoneAnimation()
