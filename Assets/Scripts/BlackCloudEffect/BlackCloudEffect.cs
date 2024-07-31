@@ -70,7 +70,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action1Active;
         set
         {
-            slider.gameObject.SetActive(value);
+            slider.gameObject.SetActive(true);
             //change text to "Scadenza della consegna"
             text.text= "Mancano 6 giorni alla scadenza della consegna";
             activateSince(1);
@@ -83,14 +83,11 @@ public class BlackCloudEffect : UdonSharpBehaviour
             managerThoughtsCloud.HappyThought();
             //cambio animazione del manager
             Debug.Log(_action1Active);
-            if(_action1Active) {
-                managerAnimator.Play("Phone", 0, 0);
-                for (int i = 0; i < teamMemberAnimators.Length; i++)
-                {
-                    teamMemberAnimators[i].Play("Typing", 0, 0);
-                    teamMemberAnimators[i].SetInteger("transistion", 0);
-                }
-
+            managerAnimator.Play("Pickup", 0, 0);
+            for (int i = 0; i < teamMemberAnimators.Length; i++)
+            {
+                teamMemberAnimators[i].Play("Typing", 0, 0);
+                teamMemberAnimators[i].SetInteger("transistion", 0);
             }
 
             managerAnimator.SetInteger("phone", 1);
@@ -480,7 +477,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
             L’insegnante spiega chi sono, cosa stanno facendo e qual è la situazione del progetto. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action1Active = true;
+        //faccio sto giochetto per aggiornare la variabile su tutti i client
+        action1Active = !action1Active;
     }
 
     public void activateAction2()
