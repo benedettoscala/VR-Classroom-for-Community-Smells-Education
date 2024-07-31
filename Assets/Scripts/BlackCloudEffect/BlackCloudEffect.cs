@@ -432,6 +432,12 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             //se è finito l'animazione
             LSmartPhone.SetActive(true);
+        }
+
+        if(managerAnimator.GetCurrentAnimatorStateInfo(0).tagHash == Animator.StringToHash("Phone"))
+        {
+            //se è finito l'animazione
+            LSmartPhone.SetActive(true);
         } else {
             LSmartPhone.SetActive(false);
         }
@@ -532,7 +538,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         La barra di avanzamento è ora di colore rosso ed è quasi giunta alla fine. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action5Active = !action5Active;
+        action5Active = true;
     }
 
     public void activateAction6()
@@ -546,7 +552,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action6Active = !action6Active;
+        action6Active = true;
     }
 
     public void activateAction7()
@@ -558,7 +564,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             e il progetto è fallito. Compare infine la scritta “Black Cloud”. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action7Active = !action7Active;
+        action7Active = true;
     }
 
     public void activateSince(int actionNumber) {

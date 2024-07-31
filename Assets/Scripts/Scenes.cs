@@ -25,6 +25,8 @@ public class Scenes : UdonSharpBehaviour
     public GameObject BCEDummy;
     public GameObject BackToSmellsButton;
 
+    public GameObject blackCloudEffectScene;
+
     [UdonSynced, FieldChangeCallback(nameof(BCEAnimation))]
     private int _BCEAnimation = 0;
 
@@ -78,8 +80,18 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+    [UdonSynced, FieldChangeCallback(nameof(BCESceneActive))]
+    private bool _BCESceneActive = false;
 
-
+    private bool BCESceneActive
+    {
+        get => _BCESceneActive;
+        set
+        {
+            _BCESceneActive = value;
+            blackCloudEffectScene.SetActive(_BCESceneActive);
+        }
+    }
 
     public void ChangeScene()
     {
@@ -145,7 +157,7 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("BCE Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, true, true);
+        ToggleUIElements(false, true, true, true);
         //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
@@ -153,15 +165,16 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("Back to Smells Button");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(true, false, false);
+        ToggleUIElements(true, false, false, false);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
-    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells)
+    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool blackCloudEffect)
     {
         smellsButton.SetActive(smells);
         BCEAnimationButtons.SetActive(bceButtons);
         BackToSmellsButton.SetActive(backToSmells);
+        BCESceneActive = blackCloudEffect;
     }
 
     public void ActivateAndDeactivateBCEAnimation()
