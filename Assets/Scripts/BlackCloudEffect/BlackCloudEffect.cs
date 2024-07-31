@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 using TMPro;
+using Collections.Pooled;
+using VRC.Udon.Serialization.OdinSerializer.Utilities;
+using BestHTTP.SecureProtocol.Org.BouncyCastle.Crypto.Parameters;
+using System;
 
 
 //TODO: SINCRONIZZARE LA CLASSE PER I VARI CLIENT(sarà una gran rottura)
@@ -35,7 +39,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     public CloudThoughts[] teamMemberCloudThoughts;
 
-
+    
     float valueSliderToReach = 0f;
 
     [UdonSynced, FieldChangeCallback(nameof(activateSettingVal))]
@@ -71,25 +75,35 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action1Active;
         set
         {
-            _action1Active = value;
-            slider.gameObject.SetActive(_action1Active);
+            slider.gameObject.SetActive(value);
             //change text to "Scadenza della consegna"
             text.text= "Mancano 6 giorni alla scadenza della consegna";
-            actions[1].SetActive(_action1Active);
-            if(_action1Active)
+            activateSince(1);
+            //team members are thinking
+            for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
             {
-                //team members are thinking
-                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+                teamMemberCloudThoughts[i].HappyThought();
+            }
+
+            managerThoughtsCloud.HappyThought();
+            //cambio animazione del manager
+            Debug.Log(_action1Active);
+            if(_action1Active) {
+                managerAnimator.Play("Phone", 0, 0);
+                for (int i = 0; i < teamMemberAnimators.Length; i++)
                 {
-                    teamMemberCloudThoughts[i].HappyThought();
+                    teamMemberAnimators[i].Play("Typing", 0, 0);
+                    teamMemberAnimators[i].SetInteger("transistion", 0);
                 }
 
-                managerThoughtsCloud.HappyThought();
-                //cambio animazione del manager
-                managerAnimator.SetInteger("phone", 1);
-                changeAlphaValueCloud(0.1f);
-                valueSliderToReach = 0.75f;
             }
+
+            managerAnimator.SetInteger("phone", 1);
+            changeAlphaValueCloud(0.1f);
+            valueSliderToReach = 0.75f;
+
+            SetActionStatesSince(1);
+            _action1Active = value;
         }
     }
 
@@ -101,22 +115,47 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action2Active;
         set
         {
-            _action2Active = value;
-            actions[2].SetActive(_action2Active);
+            
+            activateSince(2);
             text.text = "Mancano 5 giorni alla scadenza della consegna";
-            slider.gameObject.SetActive(_action2Active);
+            slider.gameObject.SetActive(value);
+
+            
+            
 
             managerAnimator.SetInteger("phone", 0);
-            if(_action2Active)
+
+            managerThoughtsCloud.ThinkingThought();
+            for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
             {
-                managerThoughtsCloud.ThinkingThought();
-                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
-                {
-                    teamMemberCloudThoughts[i].MuteThought();
-                }
-                changeAlphaValueCloud(0.3f);
-                valueSliderToReach = 0.85f;
+                teamMemberCloudThoughts[i].MuteThought();
             }
+            changeAlphaValueCloud(0.3f);
+            valueSliderToReach = 0.85f;
+            actions[3].SetActive(false);
+
+            Debug.Log(_action1Active);
+            //se l'animazione è già stata avviata una volta
+            if(_action2Active) {
+                
+                telefono.deactivateSmartphoneAnimation();
+                telefono.gameObject.SetActive(false);
+                for (int i = 0; i < teamMemberAnimators.Length; i++)
+                {
+                    teamMemberCloudThoughts[i].HappyThought();
+                    computers[i].deactivateSmartphoneAnimation();
+                    computers[i].gameObject.SetActive(false);
+                    teamMemberAnimators[i].Play("Typing", 0, 0);
+                    teamMemberAnimators[i].SetInteger("transistion", 0);
+                }
+                managerAnimator.Play("Walking", 0, 0);
+                managerAnimator.SetInteger("phone", 0);
+                managerAnimator.SetInteger("text", 0);
+            }
+
+
+            SetActionStatesSince(2);
+            _action2Active = value;
         }
     }
 
@@ -128,24 +167,39 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action3Active;
         set
         {
-            _action3Active = value;
-            actions[3].SetActive(_action3Active);
+            
+            activateSince(3);
             text.text = "Mancano 4 giorno alla scadenza della consegna";
 
             
+            managerThoughtsCloud.ThinkingThought();
+            for (int i = 0; i < teamMemberAnimators.Length; i++)
+            {
+                teamMemberCloudThoughts[i].DizzyThought();
+                teamMemberAnimators[i].Play("Confused", 0, 0);
+                teamMemberAnimators[i].SetInteger("transistion", 1);
+            }
+            papersAnimator.SetInteger("papers", value ? 1 : 0);
+            changeAlphaValueCloud(0.6f);
+            valueSliderToReach = 0.90f;
+            
             if(_action3Active)
             {
-                managerThoughtsCloud.ThinkingThought();
+                telefono.deactivateSmartphoneAnimation();
+                telefono.gameObject.SetActive(false);
                 for (int i = 0; i < teamMemberAnimators.Length; i++)
                 {
-                    teamMemberCloudThoughts[i].DizzyThought();
-                    teamMemberAnimators[i].Play("Confused", 0, 0);
-                    teamMemberAnimators[i].SetInteger("transistion", 1);
+                    computers[i].deactivateSmartphoneAnimation();
+                    computers[i].gameObject.SetActive(false);
                 }
-                papersAnimator.SetInteger("papers", _action3Active ? 1 : 0);
-                changeAlphaValueCloud(0.6f);
-                valueSliderToReach = 0.90f;
+                managerAnimator.Play("Walking", 0, 0);
+                managerAnimator.SetInteger("phone", 0);
+                managerAnimator.SetInteger("text", 0);
             }
+
+
+            SetActionStatesSince(3);
+            _action3Active = value;
         }
     }
 
@@ -157,20 +211,36 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action4Active;
         set
         {
-            _action4Active = value;
-            text.text = "Mancano 3 giorni alla scadenza della consegna";
-            actions[4].SetActive(_action4Active);
-
             
+            text.text = "Mancano 3 giorni alla scadenza della consegna";
+            activateSince(4);
+
+
+            managerAnimator.SetInteger("text", 1);
+            //force the current animation to stop
+            changeAlphaValueCloud(0.7f);
+            valueSliderToReach = 0.95f;
+            
+            //se l'animazione è già stata avviata
             if(_action4Active)
             {  
-                
-                
+                telefono.deactivateSmartphoneAnimation();
+                telefono.gameObject.SetActive(false);
+                for (int i = 0; i < teamMemberAnimators.Length; i++)
+                {
+                    computers[i].deactivateSmartphoneAnimation();
+                    computers[i].gameObject.SetActive(false);
+                }
+                managerAnimator.Play("Text", 0, 0);
+                managerAnimator.SetInteger("phone", 0);
                 managerAnimator.SetInteger("text", 1);
-                //force the current animation to stop
-                changeAlphaValueCloud(0.7f);
-                valueSliderToReach = 0.95f;
+                
+                
             }
+
+
+            SetActionStatesSince(4);
+            _action4Active = value;
         }
     }
 
@@ -182,23 +252,40 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action5Active;
         set
         {
-            _action5Active = value;
-            actions[5].SetActive(_action5Active);
+            
+            activateSince(5);
             text.text = "Mancano 2 giorni alla scadenza della consegna";
-            telefono.gameObject.SetActive(_action5Active);
-            slider.gameObject.SetActive(_action5Active);
+            telefono.gameObject.SetActive(value);
+            slider.gameObject.SetActive(value);
+
+            managerThoughtsCloud.AngryThought();
+            // resetto l'animazione
+            managerAnimator.SetInteger("text", 2);
+            telefono.activateSmartphoneAnimation();
+            valueSliderToReach = 0.97f;
+
+            changeAlphaValueCloud(0.7f);
+
             if(_action5Active)
             {
-                managerThoughtsCloud.AngryThought();
-                // resetto l'animazione
-                managerAnimator.Play("Text", 0, 0);
-                managerAnimator.SetInteger("text", 2);
-                telefono.activateSmartphoneAnimation();
-                valueSliderToReach = 0.97f;
-            } else {
                 telefono.deactivateSmartphoneAnimation();
+                telefono.gameObject.SetActive(true);
+                telefono.activateSmartphoneAnimation();
+                
+                for (int i = 0; i < teamMemberAnimators.Length; i++)
+                {
+                    teamMemberAnimators[i].Play("Typing", 0, 0);
+                    teamMemberAnimators[i].SetInteger("transistion", 0);
+                    computers[i].deactivateSmartphoneAnimation();
+                    computers[i].gameObject.SetActive(false);
+                }
+
+                managerAnimator.Play("Text", 0, 0);
             }
 
+
+            SetActionStatesSince(5);
+            _action5Active = value;
         }
     }
 
@@ -210,35 +297,52 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action6Active;
         set
         {
-            _action6Active = value;
+           
             text.text = "Mancano 1 giorno alla scadenza della consegna";
-            actions[6].SetActive(_action6Active);
+            activateSince(6);
+            managerThoughtsCloud.ThinkingThought();
+            managerAnimator.SetInteger("text", 1);
+            int i = 0;
+
+            changeAlphaValueCloud(0.7f);
+
+            foreach(SmartphoneCanvas computer in computers)
+            {
+                if ( i % 2 == 0) {
+                    teamMemberAnimators[i].SetInteger("transistion", 2);
+                } else {
+                    teamMemberAnimators[i].SetInteger("transistion", 3);
+                }
+                teamMemberCloudThoughts[i].AngryThought();
+                i++;
+                computer.gameObject.SetActive(true);
+                computer.activateSmartphoneAnimation();
+
+            } 
+
             if(_action6Active)
             {
-                managerThoughtsCloud.ThinkingThought();
-                managerAnimator.SetInteger("text", 1);
-                int i = 0;
-                foreach(SmartphoneCanvas computer in computers)
+                telefono.gameObject.SetActive(true);
+                
+                for(int j = 0; j < teamMemberCloudThoughts.Length; j++)
                 {
-                    if ( i % 2 == 0) {
-                        teamMemberAnimators[i].SetInteger("transistion", 2);
+                    //activate computers
+                    computers[j].gameObject.SetActive(true);
+
+                    if ( j % 2 == 0) {
+                        teamMemberAnimators[j].Play("Rage1", 0, 0);
+                        teamMemberAnimators[j].SetInteger("transistion", 2);
                     } else {
-                        teamMemberAnimators[i].SetInteger("transistion", 3);
+                        teamMemberAnimators[j].Play("Rage2", 0, 0);
+                        teamMemberAnimators[j].SetInteger("transistion", 3);
                     }
-                    teamMemberCloudThoughts[i].AngryThought();
-                    i++;
-                    computer.gameObject.SetActive(true);
-                    computer.activateSmartphoneAnimation();
-                    
                 }
-            } else {
-                foreach(SmartphoneCanvas computer in computers)
-                {
-                    computer.gameObject.SetActive(false);
-                    computer.deactivateSmartphoneAnimation();
-                }
-            
+                managerAnimator.Play("Text", 0, 0);
+                managerAnimator.SetInteger("text", 1); 
             }
+
+            SetActionStatesSince(6);
+            _action6Active = value;
         }
     }
     
@@ -249,28 +353,51 @@ public class BlackCloudEffect : UdonSharpBehaviour
     {
         get => _action7Active;
         set
-        {
-            
-            _action7Active = value;
-            actions[7].SetActive(_action7Active);
+        { 
+            activateSince(7);
             //se lo slider è attivo
             text.text = "Scaduto il tempo per la consegna";  
-    
+            
+            changeAlphaValueCloud(0.7f);
+
+            managerThoughtsCloud.SadThought();
+            for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+            {
+                teamMemberCloudThoughts[i].SadThought();
+            }
+            valueSliderToReach = 1f;
+
             if(_action7Active)
             {
-                managerThoughtsCloud.SadThought();
-                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+                telefono.gameObject.SetActive(true);
+                
+                for(int i = 0; i < teamMemberCloudThoughts.Length; i++)
                 {
-                    teamMemberCloudThoughts[i].SadThought();
+                    //activate computers
+                    computers[i].gameObject.SetActive(true);
+
+                    if ( i % 2 == 0) {
+                        teamMemberAnimators[i].Play("Rage1", 0, 0);
+                        teamMemberAnimators[i].SetInteger("transistion", 2);
+                    } else {
+                        teamMemberAnimators[i].Play("Rage2", 0, 0);
+                        teamMemberAnimators[i].SetInteger("transistion", 3);
+                    }
                 }
-                valueSliderToReach = 1f;
+
+                managerAnimator.Play("Text", 0, 0);
+                managerAnimator.SetInteger("text", 1); 
             }
-            
+
+            SetActionStatesSince(7); 
+
+            _action7Active = value;  
         }
     }
 
     void Start()
-    {
+    {   
+
         setting.SetActive(false);
         slider.value = 0; //set slider value to 0
         //deactivate slider
@@ -310,12 +437,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             //se è finito l'animazione
             LSmartPhone.SetActive(true);
-        }
-
-        //se lo stato Hangup con tag Hangdup is playing
-        if(managerAnimator.GetCurrentAnimatorStateInfo(0).tagHash == Animator.StringToHash("Hangup"))
-        {
-            //se è finito l'animazione
+        } else {
             LSmartPhone.SetActive(false);
         }
         
@@ -357,7 +479,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             L’insegnante spiega chi sono, cosa stanno facendo e qual è la situazione del progetto. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action1Active = !action1Active;
+        action1Active = true;
     }
 
     public void activateAction2()
@@ -376,7 +498,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
 
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action2Active = !action2Active;
+        action2Active = true;
     }
 
     public void activateAction3()
@@ -388,7 +510,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         di informazioni che non viaggiano tra i membri del team.
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action3Active = !action3Active;
+        action3Active = true;
     }
 
     public void activateAction4()
@@ -401,7 +523,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             e che riusciranno a comunicare solo con il loro manager. 
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        action4Active = !action4Active;
+        action4Active = true;
     }
 
     public void activateAction5()
@@ -444,6 +566,50 @@ public class BlackCloudEffect : UdonSharpBehaviour
         action7Active = !action7Active;
     }
 
-
+    public void activateSince(int actionNumber) {
+        for (int i = 1; i <= actionNumber; i++) {
+            
+            actions[i].SetActive(true);
+        }
+        for (int i = actionNumber + 1; i < actions.Length; i++) {
+            actions[i].SetActive(false);
+        }
+    }
     
+
+    public void SetActionStatesSince(int actionNumber)
+    {
+
+        // Array di stati per le azioni
+        bool[] actionStates = new bool[7];
+        //inizializza a false
+        for (int i = 0; i < actionStates.Length; i++)
+        {
+            actionStates[i] = false;
+        }
+
+
+        for (int i = 0; i < actionNumber; i++)
+        {
+            actionStates[i] = true;
+        }
+
+        // Imposta gli stati delle azioni
+        _action1Active = actionStates[0];
+        _action2Active = actionStates[1];
+        _action3Active = actionStates[2];
+        _action4Active = actionStates[3];
+        _action5Active = actionStates[4];
+        _action6Active = actionStates[5];
+        _action7Active = actionStates[6];
+
+        //debug all the actions
+        Debug.Log("Action 1: " + _action1Active);
+        Debug.Log("Action 2: " + _action2Active);
+        Debug.Log("Action 3: " + _action3Active);
+        Debug.Log("Action 4: " + _action4Active);
+        Debug.Log("Action 5: " + _action5Active);
+        Debug.Log("Action 6: " + _action6Active);
+        Debug.Log("Action 7: " + _action7Active);
+    }
 }
