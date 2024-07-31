@@ -70,10 +70,10 @@ public class BlackCloudEffect : UdonSharpBehaviour
         get => _action1Active;
         set
         {
+            activateSince(1);
             slider.gameObject.SetActive(true);
             //change text to "Scadenza della consegna"
             text.text= "Mancano 6 giorni alla scadenza della consegna";
-            activateSince(1);
             //team members are thinking
             for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
             {
@@ -94,8 +94,15 @@ public class BlackCloudEffect : UdonSharpBehaviour
             changeAlphaValueCloud(0.1f);
             valueSliderToReach = 0.75f;
 
-            SetActionStatesSince(1);
+            
+            _action2Active = false;
+            _action3Active = false;
+            _action4Active = false;
+            _action5Active = false;
+            _action6Active = false;
+            _action7Active = false;
             _action1Active = value;
+            
         }
     }
 
