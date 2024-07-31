@@ -33,6 +33,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
     public GameObject LSmartPhone;
     public GameObject RSmartPhone;
 
+    public CloudThoughts[] teamMemberCloudThoughts;
+
 
     float valueSliderToReach = 0f;
 
@@ -45,6 +47,12 @@ public class BlackCloudEffect : UdonSharpBehaviour
         set
         {   
             managerThoughtsCloud.NoThought();
+
+            for(int i = 0; i < teamMemberCloudThoughts.Length; i++)
+            {
+                teamMemberCloudThoughts[i].NoThought();
+            }
+
             _activateSettingVal = value;
             actions[0].SetActive(_activateSettingVal);
             setting.SetActive(_activateSettingVal);
@@ -70,7 +78,13 @@ public class BlackCloudEffect : UdonSharpBehaviour
             actions[1].SetActive(_action1Active);
             if(_action1Active)
             {
-                managerThoughtsCloud.ThinkingThought();
+                //team members are thinking
+                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+                {
+                    teamMemberCloudThoughts[i].HappyThought();
+                }
+
+                managerThoughtsCloud.HappyThought();
                 //cambio animazione del manager
                 managerAnimator.SetInteger("phone", 1);
                 changeAlphaValueCloud(0.1f);
@@ -95,7 +109,11 @@ public class BlackCloudEffect : UdonSharpBehaviour
             managerAnimator.SetInteger("phone", 0);
             if(_action2Active)
             {
-                managerThoughtsCloud.HappyThought();
+                managerThoughtsCloud.ThinkingThought();
+                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+                {
+                    teamMemberCloudThoughts[i].MuteThought();
+                }
                 changeAlphaValueCloud(0.3f);
                 valueSliderToReach = 0.85f;
             }
@@ -120,6 +138,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
                 managerThoughtsCloud.ThinkingThought();
                 for (int i = 0; i < teamMemberAnimators.Length; i++)
                 {
+                    teamMemberCloudThoughts[i].DizzyThought();
                     teamMemberAnimators[i].Play("Confused", 0, 0);
                     teamMemberAnimators[i].SetInteger("transistion", 1);
                 }
@@ -206,9 +225,11 @@ public class BlackCloudEffect : UdonSharpBehaviour
                     } else {
                         teamMemberAnimators[i].SetInteger("transistion", 3);
                     }
+                    teamMemberCloudThoughts[i].AngryThought();
                     i++;
                     computer.gameObject.SetActive(true);
                     computer.activateSmartphoneAnimation();
+                    
                 }
             } else {
                 foreach(SmartphoneCanvas computer in computers)
@@ -238,12 +259,15 @@ public class BlackCloudEffect : UdonSharpBehaviour
             if(_action7Active)
             {
                 managerThoughtsCloud.SadThought();
+                for (int i = 0; i < teamMemberCloudThoughts.Length; i++)
+                {
+                    teamMemberCloudThoughts[i].SadThought();
+                }
                 valueSliderToReach = 1f;
             }
             
         }
     }
-
 
     void Start()
     {
@@ -295,9 +319,14 @@ public class BlackCloudEffect : UdonSharpBehaviour
             LSmartPhone.SetActive(false);
         }
         
-        //la thoughtsCloud è sempre rivolta verso il local player
-        managerThoughtsCloud.transform.LookAt(Networking.LocalPlayer.GetPosition());
-        
+        //se lo stato Text con tag Text is playing
+        if(managerAnimator.GetCurrentAnimatorStateInfo(0).tagHash == Animator.StringToHash("Text"))
+        {
+            //se è finito l'animazione
+            RSmartPhone.SetActive(true);
+        } else {
+            RSmartPhone.SetActive(false);
+        }
     }
 
     public void activateSetting()
