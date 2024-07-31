@@ -3,12 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
-using VRC.Udon;
 using TMPro;
-using Collections.Pooled;
-using VRC.Udon.Serialization.OdinSerializer.Utilities;
-using BestHTTP.SecureProtocol.Org.BouncyCastle.Crypto.Parameters;
-using System;
 
 
 //TODO: SINCRONIZZARE LA CLASSE PER I VARI CLIENT(sarà una gran rottura)
