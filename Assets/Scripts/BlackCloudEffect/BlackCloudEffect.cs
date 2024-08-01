@@ -91,6 +91,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             }
 
             managerAnimator.SetInteger("phone", 1);
+            managerAnimator.SetInteger("text", 0);
             changeAlphaValueCloud(0.1f);
             valueSliderToReach = 0.75f;
 
@@ -260,6 +261,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             managerThoughtsCloud.AngryThought();
             // resetto l'animazione
             managerAnimator.SetInteger("text", 2);
+            telefono.deactivateSmartphoneAnimation();
             telefono.activateSmartphoneAnimation();
             valueSliderToReach = 0.97f;
 
@@ -460,6 +462,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
     {
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         activateSettingVal = true;
+        RequestSerialization();
     }
 
 
@@ -486,6 +489,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         //faccio sto giochetto per aggiornare la variabile su tutti i client
         action1Active = !action1Active;
+        RequestSerialization();
     }
 
     public void activateAction2()
@@ -505,6 +509,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action2Active = true;
+        RequestSerialization();
     }
 
     public void activateAction3()
@@ -517,6 +522,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action3Active = true;
+        RequestSerialization();
     }
 
     public void activateAction4()
@@ -530,6 +536,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action4Active = true;
+        RequestSerialization();
     }
 
     public void activateAction5()
@@ -544,6 +551,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action5Active = true;
+        RequestSerialization();
     }
 
     public void activateAction6()
@@ -558,6 +566,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action6Active = true;
+        RequestSerialization();
     }
 
     public void activateAction7()
@@ -570,6 +579,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         ***/
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         action7Active = true;
+        RequestSerialization();
     }
 
     public void activateSince(int actionNumber) {

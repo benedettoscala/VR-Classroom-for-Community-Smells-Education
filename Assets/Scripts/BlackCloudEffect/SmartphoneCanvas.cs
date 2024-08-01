@@ -89,6 +89,7 @@ public class SmartphoneCanvas : UdonSharpBehaviour
 
     public void activateSmartphoneAnimation()
     {
+        deactivateSmartphoneAnimation();
         showNotifications = true;
        
     }
