@@ -112,7 +112,7 @@ public class AnimationControllerUI : UdonSharpBehaviour
         animationController.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, eventMethodName);
     }
 
-    public void OnForwardButtonClick()
+    public void OnNextButtonClick()
     {
         currentIndex = (currentIndex + 1) % AnimationTitles.Length;
         UpdateUI();

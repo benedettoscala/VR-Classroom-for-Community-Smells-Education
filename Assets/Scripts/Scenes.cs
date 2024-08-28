@@ -165,7 +165,7 @@ public class Scenes : UdonSharpBehaviour
         //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
-    public void ULFButtonSelected()
+    public void ULWButtonSelected()
     {  
         Debug.Log("ULF Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
