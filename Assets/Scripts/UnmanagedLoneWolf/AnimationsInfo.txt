@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Animation 1",
+    "description": "Description for animation 1.",
+    "event": "metodo1"
+  },
+  {
+    "title": "Animation 2",
+    "description": "Description for animation 2.",
+    "event": "metodo2"
+  }
+]

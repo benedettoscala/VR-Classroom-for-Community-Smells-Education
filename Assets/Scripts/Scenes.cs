@@ -27,6 +27,10 @@ public class Scenes : UdonSharpBehaviour
 
     public GameObject blackCloudEffectScene;
 
+
+    public GameObject ULFAnimationButtons;
+    public GameObject UnmanagedLoneWolfScene;
+
     [UdonSynced, FieldChangeCallback(nameof(BCEAnimation))]
     private int _BCEAnimation = 0;
 
@@ -157,23 +161,33 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("BCE Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, true, true, true);
+        ToggleUIElements(false, true, true, true, false);
         //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
+    }
+
+    public void ULFButtonSelected()
+    {  
+        Debug.Log("ULF Button Selected");
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        ToggleUIElements(false, false, true, false, true);
+        //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
+        
     }
 
     public void backToSmellsButton()
     {
         Debug.Log("Back to Smells Button");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(true, false, false, false);
+        ToggleUIElements(true, false, false, false, false);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
-    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool blackCloudEffect)
+    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool blackCloudEffect, bool ulfButtons)
     {
         smellsButton.SetActive(smells);
         BCEAnimationButtons.SetActive(bceButtons);
         BackToSmellsButton.SetActive(backToSmells);
+        ULFAnimationButtons.SetActive(ulfButtons);
         BCESceneActive = blackCloudEffect;
     }
 
