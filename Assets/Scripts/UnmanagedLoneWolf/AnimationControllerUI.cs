@@ -107,8 +107,12 @@ public class AnimationControllerUI : UdonSharpBehaviour
 
     public void OnPlayButtonClick()
     {
-        String eventMethodName = AnimationTitles[currentIndex];
+        String eventMethodName = AnimationEventsNames[currentIndex];
         //send a custom event to the UdonBehaviour that controls the animation
+        //make a debug log to show the event name
+        Debug.Log("Sending event: " + eventMethodName);
+        //i am sending the event to...
+        Debug.Log("Sending event to: " + animationController.name);
         animationController.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, eventMethodName);
     }
 

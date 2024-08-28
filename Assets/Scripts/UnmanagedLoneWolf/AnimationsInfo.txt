@@ -1,12 +1,12 @@
 [
   {
-    "title": "Animation 1",
-    "description": "Description for animation 1.",
+    "title": "Inizio Smell",
+    "description": "Sono tutti felici (manager e team member)",
     "event": "metodo1"
   },
   {
-    "title": "Animation 2",
-    "description": "Description for animation 2.",
+    "title": "Viviana non c'è",
+    "description": "Il manager si accorge che manca Viviana",
     "event": "metodo2"
   }
 ]
