@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
+using TMPro;
 
 public class CloudThoughts : UdonSharpBehaviour
 {
+    public RawImage cloud;
+    public TextMeshProUGUI text;
     public RawImage angryFace;
     public RawImage happyFace;
     public RawImage sadFace;
@@ -16,6 +19,8 @@ public class CloudThoughts : UdonSharpBehaviour
     public RawImage thinkingCloud;
 
     public RawImage muteFace;
+
+    public Image dontCareMeme;
 
     public bool upAndDown = false;
 
@@ -27,6 +32,8 @@ public class CloudThoughts : UdonSharpBehaviour
 
     void Start()
     {
+        dontCareMeme.gameObject.SetActive(false);
+        text.gameObject.SetActive(false);
         startPos = transform.position; // Salva la posizione iniziale
     }
 
@@ -96,6 +103,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(false);
+        cloud.gameObject.SetActive(false);
     }
 
     public void DizzyThought()
@@ -121,4 +129,26 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingCloud.gameObject.SetActive(true);
     }
 
+    public void setDontCareMeme(bool active)
+    {
+        //deactivate everything besides the dont care meme
+        dontCareMeme.gameObject.SetActive(active);
+    }
+    
+    public void setText(string t)
+    {
+        
+        text.gameObject.SetActive(true);
+        text.text = t;
+    }
+
+    public void activateText()
+    {
+        text.gameObject.SetActive(true);
+    }
+
+    public void deactivateText()
+    {
+        text.gameObject.SetActive(false);
+    }
 }
