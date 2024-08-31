@@ -11,7 +11,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 {
     public CloudThoughts managerThoughtsCloud;
     public TextMeshProUGUI text;
-    public Slider slider;
+    public TimelineController slider;
     public float velocity = 0.05f;
     public GameObject setting;
 
@@ -34,8 +34,6 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     public CloudThoughts[] teamMemberCloudThoughts;
 
-    
-    float valueSliderToReach = 0f;
 
     [UdonSynced, FieldChangeCallback(nameof(activateSettingVal))]
     bool _activateSettingVal = false;
@@ -71,7 +69,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         set
         {
             activateSince(1);
-            slider.gameObject.SetActive(true);
+            slider.SetSliderVisibility(true);
             //change text to "Scadenza della consegna"
             text.text= "Mancano 6 giorni alla scadenza della consegna";
             //team members are thinking
@@ -93,7 +91,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             managerAnimator.SetInteger("phone", 1);
             managerAnimator.SetInteger("text", 0);
             changeAlphaValueCloud(0.1f);
-            valueSliderToReach = 0.75f;
+
 
             
             _action2Active = false;
@@ -118,7 +116,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
             
             activateSince(2);
             text.text = "Mancano 5 giorni alla scadenza della consegna";
-            slider.gameObject.SetActive(value);
+
 
             
             
@@ -131,7 +129,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
                 teamMemberCloudThoughts[i].MuteThought();
             }
             changeAlphaValueCloud(0.3f);
-            valueSliderToReach = 0.85f;
+            slider.SetSliderVisibility(true);
+            slider.SetSliderTarget(0.75f);
             actions[3].SetActive(false);
 
             Debug.Log(_action1Active);
@@ -181,7 +180,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
             }
             papersAnimator.SetInteger("papers", value ? 1 : 0);
             changeAlphaValueCloud(0.6f);
-            valueSliderToReach = 0.90f;
+            slider.SetSliderVisibility(true);
+            slider.SetSliderTarget(0.85f);
             
             if(_action3Active)
             {
@@ -219,7 +219,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
             managerAnimator.SetInteger("text", 1);
             //force the current animation to stop
             changeAlphaValueCloud(0.7f);
-            valueSliderToReach = 0.95f;
+            slider.SetSliderVisibility(true);
+            slider.SetSliderTarget(0.9f);
             
             //se l'animazione è già stata avviata
             if(_action4Active)
@@ -256,14 +257,14 @@ public class BlackCloudEffect : UdonSharpBehaviour
             activateSince(5);
             text.text = "Mancano 2 giorni alla scadenza della consegna";
             telefono.gameObject.SetActive(value);
-            slider.gameObject.SetActive(value);
+            slider.SetSliderVisibility(true);
 
             managerThoughtsCloud.AngryThought();
             // resetto l'animazione
             managerAnimator.SetInteger("text", 2);
             telefono.deactivateSmartphoneAnimation();
             telefono.activateSmartphoneAnimation();
-            valueSliderToReach = 0.97f;
+            slider.SetSliderTarget(0.95f);
 
             changeAlphaValueCloud(0.7f);
 
@@ -366,7 +367,8 @@ public class BlackCloudEffect : UdonSharpBehaviour
             {
                 teamMemberCloudThoughts[i].SadThought();
             }
-            valueSliderToReach = 1f;
+            slider.SetSliderVisibility(true);
+            slider.SetSliderTarget(1f);
 
             if(_action7Active)
             {
@@ -400,9 +402,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
     {   
 
         setting.SetActive(false);
-        slider.value = 0; //set slider value to 0
-        //deactivate slider
-        slider.gameObject.SetActive(false);
+        slider.SetSliderVisibility(false);
         //prendi tutti i gameobject figli di blackcloud
         //activate all actions
         foreach(GameObject action in actions)
@@ -422,16 +422,6 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     void Update()
     {
-        //change slider value gradually to 0.5, use time delta time to sync with frames
-        if(slider.value < valueSliderToReach) {
-            slider.value += velocity * Time.deltaTime;
-            //cambia anche il colore da verde a rosso
-            slider.fillRect.GetComponent<Image>().color = Color.Lerp(Color.green, Color.red, slider.value);
-        }
-
-        if(slider.value >= valueSliderToReach) {
-            slider.value = valueSliderToReach;
-        }
 
         //se lo stato pickup con tag pickup is playing
         if(managerAnimator.GetCurrentAnimatorStateInfo(0).tagHash == Animator.StringToHash("Pickup"))
