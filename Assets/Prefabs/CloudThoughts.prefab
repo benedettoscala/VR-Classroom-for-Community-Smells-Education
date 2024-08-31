@@ -475,7 +475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2658732093014047094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2305780723923192594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -899,16 +899,16 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4079212979199536399}
   cloud: {fileID: 7822515672413630735}
   text: {fileID: 3791988579927981395}
-  thinkingCloud: {fileID: 7822515672413630735}
-  questionMark: {fileID: 8482949824873129287}
-  dontCareMeme: {fileID: 7194314378172333793}
-  jollyCooperation: {fileID: 8335050430881532158}
   angryFace: {fileID: 8197241730543689087}
   happyFace: {fileID: 3647861811241254033}
   sadFace: {fileID: 7033627880717750923}
   thinkingFace: {fileID: 5098484046471174327}
   dizzyFace: {fileID: 2788408799394151596}
+  thinkingCloud: {fileID: 7822515672413630735}
   muteFace: {fileID: 9152894224720990167}
+  dontCareMeme: {fileID: 7194314378172333793}
+  questionMark: {fileID: 8482949824873129287}
+  jollyCooperation: {fileID: 8335050430881532158}
   upAndDown: 1
   speed: 1.5
   height: 0.1
