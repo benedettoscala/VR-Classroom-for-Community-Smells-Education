@@ -76,6 +76,8 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
     private const int THOUGHT_ANGRY = 2;
     private const int THOUGHT_THINKING = 3;
 
+    private const int QUESTION_MARK = 4;
+
     private void HandleEndState()
     {
         HandleDontCareState();
@@ -111,7 +113,7 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
         loneWolf.SetActive(true);
         managerAnimator.SetInteger("animVal", 1);
         SetTeamCloudThoughts(THOUGHT_HAPPY);
-        managerCloudThoughts.ThinkingThought();
+        managerCloudThoughts.QuestionThought();
         loneWolfCloud.HappyThought();
         loneWolfCloud.setDontCareMeme(false);
         bigSmellTitle.SetActive(false);
@@ -159,6 +161,9 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
                     break;
                 case THOUGHT_THINKING:
                     cloud.ThinkingThought();
+                    break;
+                case QUESTION_MARK:
+                    cloud.QuestionThought();
                     break;
                 // Aggiungi altri casi per eventuali altri stati emotivi
                 default:

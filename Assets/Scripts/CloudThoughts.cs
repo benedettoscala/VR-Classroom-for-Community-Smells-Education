@@ -22,6 +22,8 @@ public class CloudThoughts : UdonSharpBehaviour
 
     public Image dontCareMeme;
 
+    public Image questionMark;
+
     public bool upAndDown = false;
 
     public float speed = 2.0f; // Velocità di movimento
@@ -59,6 +61,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void HappyThought()
@@ -70,6 +73,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void SadThought()
@@ -81,6 +85,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void ThinkingThought()
@@ -92,6 +97,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(true);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void NoThought()
@@ -104,6 +110,7 @@ public class CloudThoughts : UdonSharpBehaviour
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(false);
         cloud.gameObject.SetActive(false);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void DizzyThought()
@@ -115,6 +122,7 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
         muteFace.gameObject.SetActive(false);
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
     public void MuteThought()
@@ -127,8 +135,23 @@ public class CloudThoughts : UdonSharpBehaviour
         thinkingFace.gameObject.SetActive(false);
 
         thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(false);
     }
 
+
+    public void QuestionThought()
+    {
+        muteFace.gameObject.SetActive(false);
+        dizzyFace.gameObject.SetActive(false);
+        angryFace.gameObject.SetActive(false);
+        happyFace.gameObject.SetActive(false);
+        sadFace.gameObject.SetActive(false);
+        thinkingFace.gameObject.SetActive(false);
+
+        thinkingCloud.gameObject.SetActive(true);
+        questionMark.gameObject.SetActive(true);
+    }
+    
     public void setDontCareMeme(bool active)
     {
         //deactivate everything besides the dont care meme

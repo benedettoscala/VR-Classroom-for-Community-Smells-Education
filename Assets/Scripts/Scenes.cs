@@ -97,6 +97,20 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+    [UdonSynced, FieldChangeCallback(nameof(ULWSceneActive))]
+    private bool _ULWSceneActive = false;
+
+    private bool ULWSceneActive
+    {
+        get => _ULWSceneActive;
+        set
+        {
+            _ULWSceneActive = value;
+            UnmanagedLoneWolfScene.SetActive(_ULWSceneActive);
+        }
+    }
+
+
     public void ChangeScene()
     {
         //setto l'owner a questo oggetto per poter sincronizzare le variabili
@@ -161,7 +175,7 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("BCE Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, true, true, true, false);
+        ToggleUIElements(false, true, true, false);
         //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
@@ -169,7 +183,7 @@ public class Scenes : UdonSharpBehaviour
     {  
         Debug.Log("ULF Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, false, true, false, true);
+        ToggleUIElements(false, false, true, true);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
         
     }
@@ -178,17 +192,18 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("Back to Smells Button");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(true, false, false, false, false);
+        ToggleUIElements(true, false, false, false);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
-    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool blackCloudEffect, bool ulfButtons)
+    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool ulfButtons)
     {
         smellsButton.SetActive(smells);
         BCEAnimationButtons.SetActive(bceButtons);
         BackToSmellsButton.SetActive(backToSmells);
         ULFAnimationButtons.SetActive(ulfButtons);
-        BCESceneActive = blackCloudEffect;
+        BCESceneActive = bceButtons;
+        ULWSceneActive = ulfButtons;
     }
 
     public void ActivateAndDeactivateBCEAnimation()
