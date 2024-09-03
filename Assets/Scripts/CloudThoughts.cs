@@ -26,6 +26,12 @@ public class CloudThoughts : UdonSharpBehaviour
 
     public Image jollyCooperation;
 
+    public RawImage SendingEmail;
+
+    public RawImage ReceivedEmail;
+
+    public TextMeshProUGUI NotificationText;
+
     public bool upAndDown = false;
 
     public float speed = 2.0f; // Velocità di movimento
@@ -33,6 +39,12 @@ public class CloudThoughts : UdonSharpBehaviour
 
     private Vector3 startPos;
 
+    
+    private int notificationCount = 0;
+    public int maxNotifications = 100;
+    public float notificationInterval = 1f;
+    private float lastNotificationTime;
+    private bool isCountingNotifications = false;
 
     void Start()
     {
@@ -49,6 +61,11 @@ public class CloudThoughts : UdonSharpBehaviour
             //fai muovere la cloud su e giù
             float newY = startPos.y + Mathf.Sin(Time.time * speed) * height;
             transform.position = new Vector3(startPos.x, newY, startPos.z);
+        }
+
+        if (isCountingNotifications)
+        {
+            UpdateNotificationCount();
         }
         
     }
@@ -198,4 +215,55 @@ public class CloudThoughts : UdonSharpBehaviour
     {
         text.gameObject.SetActive(false);
     }
+
+    public void activateSendingEmail(bool active)
+    {
+        SendingEmail.gameObject.SetActive(active);
+    }
+
+    public void activateReceivedEmail(bool active)
+    {
+        ReceivedEmail.gameObject.SetActive(active);
+    }
+
+    public void StartCountNotification()
+    {
+        activateReceivedEmail(true);
+        isCountingNotifications = true;
+        notificationCount = 0;
+        lastNotificationTime = Time.time;
+        UpdateNotificationText();
+    }
+
+    public void StopCountNotification()
+    {
+        isCountingNotifications = false;
+    }
+
+    private void UpdateNotificationCount()
+    {
+        if (Time.time - lastNotificationTime >= notificationInterval)
+        {
+            if (notificationCount < maxNotifications)
+            {
+                notificationCount++;
+                UpdateNotificationText();
+                lastNotificationTime = Time.time;
+            }
+            else
+            {
+                StopCountNotification();
+            }
+        }
+    }
+
+    private void UpdateNotificationText()
+    {
+        if (NotificationText != null)
+        {
+            NotificationText.text = notificationCount.ToString();
+        }
+    }
+
+
 }

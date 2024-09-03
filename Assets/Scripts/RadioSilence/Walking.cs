@@ -16,7 +16,8 @@ public class Walking : UdonSharpBehaviour
 
     private int currentPointIndex = 0;
     private int targetPointIndex = -1;
-    private float waitCounter = 0f;
+    [HideInInspector]
+    public float waitCounter = 0f;
     public bool isWalking = false;
     private bool isLooking = false;
     private bool isFinalLook = false;
@@ -51,7 +52,7 @@ public class Walking : UdonSharpBehaviour
         {
             isLooking = false;
             isWalking = true;
-            SendCustomEventDelayedSeconds("OnStartWalking", 0f); // Chiamata aggiunta qui
+            SendCustomEventDelayedSeconds("OnStartWalking", 0f);
             return;
         }
 

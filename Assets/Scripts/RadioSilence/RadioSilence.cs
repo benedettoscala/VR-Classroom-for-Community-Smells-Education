@@ -20,8 +20,16 @@ public class RadioSilence : UdonSharpBehaviour
     public Walking walkingGiuliaScript;
     public Walking walkingSecondManagerScript;
 
+    public MultiEmailExchangeSystem multiEmailExchangeSystem;
+
+    public SpiralMovement spiralMovement;
+
+    public TimelineController timelineController;
+
     void Start()
     {
+        timelineController.SetSliderVisibility(true);
+
         // Assegna questo script come eventReceiver per gli script Walking
         if (walkingGiuliaScript != null)
         {
@@ -31,6 +39,7 @@ public class RadioSilence : UdonSharpBehaviour
         {
             walkingSecondManagerScript.eventReceiver = this;
         }
+
     }
 
     private int _synchronizedVariable = 0;
@@ -55,6 +64,12 @@ public class RadioSilence : UdonSharpBehaviour
             case 2:
                 PointToGiuliaState();
                 break;
+            case 3:
+                ExchangeMailState();
+                break;
+            case 4:
+                CommunicationCaosState();
+                break;
         }
     }
 
@@ -77,15 +92,61 @@ public class RadioSilence : UdonSharpBehaviour
         giuliaAnimator.SetInteger("animVal", 0);
 
         giuliaCloudThoughts.NoThought();
+
+        timelineController.SetSliderVisibility(true);
+        timelineController.SetSliderTarget(0.5f);
+
     }
 
     private void PointToGiuliaState()
     {
-        giuliaAnimator.SetInteger("animVal", 1);
+        
         walkingGiuliaScript.StartWalking(1);
-
         walkingSecondManagerScript.StartWalking(1);
+
+        giuliaAnimator.SetInteger("animVal", 1);
         secondManagerAnimator.SetInteger("animVal", 1);
+        managerAnimator.SetInteger("animVal", 1);
+
+        SetAllTeamAnimations(0);
+        timelineController.SetSliderTarget(0.6f);
+    }
+
+    private void ExchangeMailState()
+    {
+        multiEmailExchangeSystem.StartEmailExchange();
+        giuliaAnimator.SetInteger("animVal", 2);
+        //secondManagerAnimator.SetInteger("animVal", 0);
+        //managerAnimator.SetInteger("animVal", 0);
+        SetAllTeamAnimations(0);
+        giuliaCloudThoughts.StartCountNotification();
+        giuliaCloudThoughts.HappyThought();
+
+        for (int i = 0; i < teamCloudThoughts.Length; i++)
+        {
+            teamCloudThoughts[i].activateSendingEmail(true);
+            teamCloudThoughts[i].HappyThought();
+        }
+
+        secondManagerCloudThoughts.activateSendingEmail(true);
+        secondManagerCloudThoughts.HappyThought();
+
+        
+        timelineController.SetSliderTarget(0.7f);
+    }
+
+    private void CommunicationCaosState()
+    {
+        multiEmailExchangeSystem.StartEmailExchange();
+
+        //animators
+        SetAllTeamAnimations(0);
+        //giuliaAnimator.SetInteger("animVal", 2);
+        //secondManagerAnimator.SetInteger("animVal", 2);
+
+        //cloud thoughts
+
+        spiralMovement.StartSpiral();
     }
 
     public void metodo1()
@@ -96,6 +157,16 @@ public class RadioSilence : UdonSharpBehaviour
     public void metodo2()
     {
         synchronizedVariable = 2;
+    }
+
+    public void metodo3()
+    {
+        synchronizedVariable = 3;
+    }
+    
+    public void metodo4()
+    {
+        synchronizedVariable = 4;
     }
 
     // Metodi per gestire gli eventi dello script Walking per Giulia
@@ -147,7 +218,7 @@ public class RadioSilence : UdonSharpBehaviour
         Debug.Log("Un personaggio ha completato il percorso");
         Debug.Log(!walkingSecondManagerScript.isWalking);
         // Determinare quale personaggio ha completato il percorso
-        if (!walkingGiuliaScript.isWalking)
+        if (!walkingGiuliaScript.isWalking && walkingGiuliaScript.waitCounter <= 0)
         {
             OnGiuliaWalkingComplete();
         }
@@ -158,7 +229,7 @@ public class RadioSilence : UdonSharpBehaviour
     // Metodi specifici per Giulia
     private void OnGiuliaWalkingComplete()
     {
-        //giuliaAnimator.SetInteger("animVal", 0);
+        giuliaAnimator.SetInteger("animVal", 2);
     }
 
     private void OnGiuliaWaiting()
