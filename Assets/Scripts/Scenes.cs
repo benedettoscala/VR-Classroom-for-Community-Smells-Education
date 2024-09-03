@@ -30,6 +30,10 @@ public class Scenes : UdonSharpBehaviour
 
     public GameObject ULFAnimationButtons;
     public GameObject UnmanagedLoneWolfScene;
+    
+    public GameObject RSAnimationButtons;
+    public GameObject RadioSilenceScene;
+
 
     [UdonSynced, FieldChangeCallback(nameof(BCEAnimation))]
     private int _BCEAnimation = 0;
@@ -110,6 +114,19 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+    [UdonSynced, FieldChangeCallback(nameof(RSSceneActive))]
+    private bool _RSSceneActive = false;
+
+    private bool RSSceneActive
+    {
+        get => _RSSceneActive;
+        set
+        {
+            _RSSceneActive = value;
+            RadioSilenceScene.SetActive(_RSSceneActive);
+        }
+    }
+
 
     public void ChangeScene()
     {
@@ -175,7 +192,7 @@ public class Scenes : UdonSharpBehaviour
     {
         Debug.Log("BCE Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, true, true, false);
+        ToggleUIElements(false, true, true, false, false);
         //BCEDummyActive = true; // Attiva BCEDummy e sincronizza
     }
 
@@ -183,27 +200,37 @@ public class Scenes : UdonSharpBehaviour
     {  
         Debug.Log("ULF Button Selected");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(false, false, true, true);
+        ToggleUIElements(false, false, true, true, false);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
         
+    }
+
+    public void RSButtonSelected()
+    {
+        Debug.Log("RS Button Selected");
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        ToggleUIElements(false, false, true, false, true);
+        //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
     public void backToSmellsButton()
     {
         Debug.Log("Back to Smells Button");
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-        ToggleUIElements(true, false, false, false);
+        ToggleUIElements(true, false, false, false, false);
         //BCEDummyActive = false; // Disattiva BCEDummy e sincronizza
     }
 
-    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool ulfButtons)
+    private void ToggleUIElements(bool smells, bool bceButtons, bool backToSmells, bool ulfButtons, bool rsButtons)
     {
         smellsButton.SetActive(smells);
         BCEAnimationButtons.SetActive(bceButtons);
         BackToSmellsButton.SetActive(backToSmells);
         ULFAnimationButtons.SetActive(ulfButtons);
+        RSAnimationButtons.SetActive(rsButtons);
         BCESceneActive = bceButtons;
         ULWSceneActive = ulfButtons;
+        RSSceneActive = rsButtons;
     }
 
     public void ActivateAndDeactivateBCEAnimation()

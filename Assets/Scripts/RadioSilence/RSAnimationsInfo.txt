@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Inizio Smell",
+    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "event": "metodo1"
+  },
+  {
+    "title": "Pointing",
+    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "event": "metodo2"
+  }
+]
