@@ -38,6 +38,8 @@ public class RadioSilence : UdonSharpBehaviour
 
     public AppearDisappearBehaviour appearDisappearBehaviour;
 
+    private bool hasAppeared = false;
+
     void Start()
     {
         timelineController.SetSliderVisibility(true);
@@ -100,7 +102,12 @@ public class RadioSilence : UdonSharpBehaviour
 
     private void HandleStartState()
     {
-        appearDisappearBehaviour.Appear();
+        if (!hasAppeared)
+        {
+            appearDisappearBehaviour.Appear();
+            hasAppeared = true;
+        }
+        
         spiralMovement.StopSpiral();
         multiEmailExchangeSystem.StopEmailExchange();
 

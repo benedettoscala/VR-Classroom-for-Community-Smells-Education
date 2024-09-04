@@ -57,11 +57,11 @@ public class CloudThoughts : UdonSharpBehaviour
     {
         //la cloud è sempre rivolta verso il player
         transform.LookAt(Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position);
-        if (upAndDown) {
+        /*if (upAndDown) {
             //fai muovere la cloud su e giù
             float newY = startPos.y + Mathf.Sin(Time.time * speed) * height;
             transform.position = new Vector3(startPos.x, newY, startPos.z);
-        }
+        }*/
 
         if (isCountingNotifications)
         {
@@ -238,6 +238,7 @@ public class CloudThoughts : UdonSharpBehaviour
     public void StopCountNotification()
     {
         isCountingNotifications = false;
+        activateReceivedEmail(false);
     }
 
     private void UpdateNotificationCount()
