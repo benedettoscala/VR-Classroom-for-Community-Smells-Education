@@ -26,6 +26,16 @@ public class RadioSilence : UdonSharpBehaviour
 
     public TimelineController timelineController;
 
+    public Transform giuliaStartPoint;
+
+    public Transform secondManagerStartPoint;
+
+    public Transform giuliaEndPoint;
+
+    public Transform secondManagerEndPoint;
+
+    public GameObject testoGiganteDiFineSmell;
+
     void Start()
     {
         timelineController.SetSliderVisibility(true);
@@ -40,6 +50,7 @@ public class RadioSilence : UdonSharpBehaviour
             walkingSecondManagerScript.eventReceiver = this;
         }
 
+        testoGiganteDiFineSmell.gameObject.SetActive(false);
     }
 
     private int _synchronizedVariable = 0;
@@ -70,6 +81,9 @@ public class RadioSilence : UdonSharpBehaviour
             case 4:
                 CommunicationCaosState();
                 break;
+            case 5:
+                EndState();
+                break;
         }
     }
 
@@ -83,26 +97,58 @@ public class RadioSilence : UdonSharpBehaviour
 
     private void HandleStartState()
     {
+        spiralMovement.StopSpiral();
+        multiEmailExchangeSystem.StopEmailExchange();
+
+        giuliaAnimator.transform.position = giuliaStartPoint.position;
+        secondManagerAnimator.transform.position = secondManagerStartPoint.position;
+        
         managerCloudThoughts.JollyCooperationThought();
         secondManagerCloudThoughts.JollyCooperationThought();
+        giuliaCloudThoughts.StopCountNotification();
+        secondManagerCloudThoughts.activateSendingEmail(false);
 
         managerAnimator.SetInteger("animVal", 0);
-        secondManagerAnimator.SetInteger("animVal", 0);
+        secondManagerAnimator.SetInteger("animVal", -1);
         SetAllTeamAnimations(0);
         giuliaAnimator.SetInteger("animVal", 0);
+
+        for (int i = 0; i < teamCloudThoughts.Length; i++)
+        {
+            teamCloudThoughts[i].HappyThought();
+            teamMembersAnimators[i].SetInteger("animVal", -1);
+            teamCloudThoughts[i].activateSendingEmail(false);
+        }
 
         giuliaCloudThoughts.NoThought();
 
         timelineController.SetSliderVisibility(true);
         timelineController.SetSliderTarget(0.5f);
-
+        timelineController.SetText("Mancano 7 giorni alla scadenza");
+        testoGiganteDiFineSmell.gameObject.SetActive(false);
     }
 
     private void PointToGiuliaState()
     {
+        spiralMovement.StopSpiral();
+        multiEmailExchangeSystem.StopEmailExchange();
+        giuliaCloudThoughts.StopCountNotification();
         
         walkingGiuliaScript.StartWalking(1);
         walkingSecondManagerScript.StartWalking(1);
+
+        for (int i = 0; i < teamCloudThoughts.Length; i++)
+        {
+            teamCloudThoughts[i].HappyThought();
+            teamMembersAnimators[i].SetInteger("animVal", -1);
+            teamCloudThoughts[i].activateSendingEmail(false);
+        }
+        giuliaCloudThoughts.activateSendingEmail(false);
+        secondManagerCloudThoughts.activateReceivedEmail(false);
+
+        giuliaCloudThoughts.HappyThought();
+        secondManagerCloudThoughts.HappyThought();
+        managerCloudThoughts.HappyThought();
 
         giuliaAnimator.SetInteger("animVal", 1);
         secondManagerAnimator.SetInteger("animVal", 1);
@@ -110,43 +156,82 @@ public class RadioSilence : UdonSharpBehaviour
 
         SetAllTeamAnimations(0);
         timelineController.SetSliderTarget(0.6f);
+        timelineController.SetText("Mancano 4 giorni alla scadenza");
+        testoGiganteDiFineSmell.gameObject.SetActive(false);
     }
 
     private void ExchangeMailState()
     {
+        giuliaAnimator.transform.position = giuliaEndPoint.position;
+        secondManagerAnimator.transform.position = secondManagerEndPoint.position;
+
+        spiralMovement.StopSpiral();
         multiEmailExchangeSystem.StartEmailExchange();
         giuliaAnimator.SetInteger("animVal", 2);
-        //secondManagerAnimator.SetInteger("animVal", 0);
-        //managerAnimator.SetInteger("animVal", 0);
+        secondManagerAnimator.SetInteger("animVal", 0);
+        managerAnimator.SetInteger("animVal", 4);
+ 
         SetAllTeamAnimations(0);
         giuliaCloudThoughts.StartCountNotification();
         giuliaCloudThoughts.HappyThought();
-
         for (int i = 0; i < teamCloudThoughts.Length; i++)
         {
-            teamCloudThoughts[i].activateSendingEmail(true);
             teamCloudThoughts[i].HappyThought();
+            teamMembersAnimators[i].SetInteger("animVal", -1);
+            teamCloudThoughts[i].activateSendingEmail(true);
         }
+        secondManagerCloudThoughts.HappyThought();
+        managerCloudThoughts.HappyThought();
+
 
         secondManagerCloudThoughts.activateSendingEmail(true);
         secondManagerCloudThoughts.HappyThought();
 
         
         timelineController.SetSliderTarget(0.7f);
+        timelineController.SetText("Manca 1 giorno alla scadenza");
+        testoGiganteDiFineSmell.gameObject.SetActive(false);
     }
 
     private void CommunicationCaosState()
     {
-        multiEmailExchangeSystem.StartEmailExchange();
+        giuliaAnimator.transform.position = giuliaEndPoint.position;
+        secondManagerAnimator.transform.position = secondManagerEndPoint.position;
 
+        multiEmailExchangeSystem.StartEmailExchange();
+        spiralMovement.StartSpiral();
+        giuliaCloudThoughts.StartCountNotification();
         //animators
         SetAllTeamAnimations(0);
-        //giuliaAnimator.SetInteger("animVal", 2);
-        //secondManagerAnimator.SetInteger("animVal", 2);
+        giuliaAnimator.SetInteger("animVal", 3);
+        secondManagerAnimator.SetInteger("animVal", 2);
+        managerAnimator.SetInteger("animVal", 2);
 
         //cloud thoughts
+        
+        giuliaCloudThoughts.AngryThought();
+        secondManagerCloudThoughts.AngryThought();
+        managerCloudThoughts.AngryThought();
+        for (int i = 0; i < teamCloudThoughts.Length; i++)
+        {
+            teamCloudThoughts[i].AngryThought();
+            teamMembersAnimators[i].SetInteger("animVal", i%2);
+            teamCloudThoughts[i].activateSendingEmail(true);
+        }
+        
+        secondManagerCloudThoughts.activateSendingEmail(true);
+        giuliaCloudThoughts.activateReceivedEmail(true);
 
-        spiralMovement.StartSpiral();
+        timelineController.SetSliderTarget(1f);
+        timelineController.SetText("Scaduto il termine");
+
+        testoGiganteDiFineSmell.gameObject.SetActive(false);
+    }
+
+    public void EndState()
+    {
+        CommunicationCaosState();
+        testoGiganteDiFineSmell.gameObject.SetActive(true);
     }
 
     public void metodo1()
@@ -167,6 +252,11 @@ public class RadioSilence : UdonSharpBehaviour
     public void metodo4()
     {
         synchronizedVariable = 4;
+    }
+
+    public void metodo5()
+    {
+        synchronizedVariable = 5;
     }
 
     // Metodi per gestire gli eventi dello script Walking per Giulia

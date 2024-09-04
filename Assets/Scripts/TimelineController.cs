@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
+using TMPro;
 
 public class TimelineController : UdonSharpBehaviour
 {
+    public TextMeshProUGUI text;
     public Slider slider;
     public float velocity = 0.05f;
     public float valueSliderToReach = 0f;
@@ -42,5 +44,10 @@ public class TimelineController : UdonSharpBehaviour
     public void SetSliderVisibility(bool isVisible)
     {
         slider.gameObject.SetActive(isVisible);
+    }
+
+    public void SetText(string newText)
+    {
+        text.text = newText;
     }
 }

@@ -18,5 +18,10 @@
     "title": "Caos Comunicativo",
     "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
     "event": "metodo4"
+  },
+  {
+    "title": "End Smell",
+    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "event": "metodo5"
   }
 ]

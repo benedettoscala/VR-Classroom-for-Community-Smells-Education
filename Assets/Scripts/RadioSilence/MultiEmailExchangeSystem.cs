@@ -87,13 +87,14 @@ public class MultiEmailExchangeSystem : UdonSharpBehaviour
         if (index == -1) return;
 
         emailObjects[index] = VRCInstantiate(emailPrefab);
+        emailObjects[index].transform.SetParent(recipient, false);
         senderIndices[index] = senderIndex;
         movingToRecipient[index] = true;
         isActive[index] = true;
         journeyTimes[index] = 0f;
-        startPositions[index] = senders[senderIndex].position + Vector3.up;
-        endPositions[index] = recipient.position + Vector3.up;
-        emailObjects[index].transform.position = startPositions[index];
+        startPositions[index] = recipient.InverseTransformPoint(senders[senderIndex].position) + Vector3.up;
+        endPositions[index] = Vector3.up;
+        emailObjects[index].transform.localPosition = startPositions[index];
         activeEmailCount++;
     }
 
@@ -129,7 +130,7 @@ public class MultiEmailExchangeSystem : UdonSharpBehaviour
                     movingToRecipient[i] = false;
                     senderIndices[i] = Random.Range(0, senders.Length);
                     startPositions[i] = endPositions[i];
-                    endPositions[i] = senders[senderIndices[i]].position + Vector3.up;
+                    endPositions[i] = recipient.InverseTransformPoint(senders[senderIndices[i]].position) + Vector3.up;
                     journeyTimes[i] = 0f;
                 }
             }
@@ -138,7 +139,7 @@ public class MultiEmailExchangeSystem : UdonSharpBehaviour
                 Vector3 currentPosition = Vector3.Lerp(startPositions[i], endPositions[i], journeyFraction);
                 float parabolicHeight = Mathf.Sin(journeyFraction * Mathf.PI) * maxHeight;
                 currentPosition.y += parabolicHeight;
-                emailObjects[i].transform.position = currentPosition;
+                emailObjects[i].transform.localPosition = currentPosition;
 
                 LookAtLocalPlayer(emailObjects[i]);
             }
@@ -160,7 +161,7 @@ public class MultiEmailExchangeSystem : UdonSharpBehaviour
         VRCPlayerApi localPlayer = Networking.LocalPlayer;
         if (localPlayer != null)
         {
-            Vector3 lookDirection = localPlayer.GetPosition() - emailObj.transform.position;
+            Vector3 lookDirection = localPlayer.GetPosition() - recipient.TransformPoint(emailObj.transform.localPosition);
             lookDirection.y = 0;
             Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
             emailObj.transform.rotation = Quaternion.Slerp(emailObj.transform.rotation, targetRotation, lookSpeed * Time.deltaTime);

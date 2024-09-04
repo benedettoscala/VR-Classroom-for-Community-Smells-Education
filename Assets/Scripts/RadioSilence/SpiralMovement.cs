@@ -14,7 +14,7 @@ public class SpiralMovement : UdonSharpBehaviour
     public float verticalSpeed = 0.5f;
     public float bobSpeed = 2f;
     public float bobHeight = 0.2f;
-    public float proximityToCenter = 1f; // Nuovo parametro per controllare la vicinanza al centro
+    public float proximityToCenter = 1f;
 
     private GameObject[] mailObjects;
     private float[] angles;
@@ -63,6 +63,7 @@ public class SpiralMovement : UdonSharpBehaviour
             if (mailObjects[i] == null)
             {
                 mailObjects[i] = VRCInstantiate(mailPrefab);
+                mailObjects[i].transform.SetParent(centerObject, false);
             }
 
             if (mailObjects[i] != null)
@@ -92,8 +93,6 @@ public class SpiralMovement : UdonSharpBehaviour
 
     private void UpdateMailPositions()
     {
-        if (centerObject == null) return;
-
         for (int i = 0; i < numberOfMails; i++)
         {
             if (mailObjects[i] == null) continue;
@@ -122,14 +121,9 @@ public class SpiralMovement : UdonSharpBehaviour
         float bobY = Mathf.Sin(Time.time * bobSpeed + bobOffsets[index]) * bobHeight;
 
         Vector3 spiralPosition = new Vector3(x, heights[index] + bobY, z);
-        mailObjects[index].transform.position = centerObject.position + spiralPosition;
+        mailObjects[index].transform.localPosition = spiralPosition;
 
-        Vector3 lookDirection = centerObject.position - mailObjects[index].transform.position;
-        lookDirection.y = 0;
-        if (lookDirection != Vector3.zero)
-        {
-            mailObjects[index].transform.rotation = Quaternion.LookRotation(lookDirection);
-        }
+        mailObjects[index].transform.localRotation = Quaternion.LookRotation(-spiralPosition.normalized);
     }
 
     public void SetSpiralSpeed(float speed)
