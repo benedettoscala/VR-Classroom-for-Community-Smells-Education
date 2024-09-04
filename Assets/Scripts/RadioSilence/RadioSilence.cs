@@ -36,6 +36,8 @@ public class RadioSilence : UdonSharpBehaviour
 
     public GameObject testoGiganteDiFineSmell;
 
+    public AppearDisappearBehaviour appearDisappearBehaviour;
+
     void Start()
     {
         timelineController.SetSliderVisibility(true);
@@ -51,6 +53,7 @@ public class RadioSilence : UdonSharpBehaviour
         }
 
         testoGiganteDiFineSmell.gameObject.SetActive(false);
+        appearDisappearBehaviour = GetComponent<AppearDisappearBehaviour>();
     }
 
     private int _synchronizedVariable = 0;
@@ -97,6 +100,7 @@ public class RadioSilence : UdonSharpBehaviour
 
     private void HandleStartState()
     {
+        appearDisappearBehaviour.Appear();
         spiralMovement.StopSpiral();
         multiEmailExchangeSystem.StopEmailExchange();
 
