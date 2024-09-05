@@ -28,5 +28,15 @@
     "title": "Fine",
     "description": "Appare la scritta in grande dello smell",
     "event": "metodo5"
+  },
+  {
+    "title": "Fine1",
+    "description": "Appare la scritta in grande dello smell",
+    "event": "metodo6"
+  },
+  {
+    "title": "Fine2",
+    "description": "Appare la scritta in grande dello smell",
+    "event": "metodo7"
   }
 ]

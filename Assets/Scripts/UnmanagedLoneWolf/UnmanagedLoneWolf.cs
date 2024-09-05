@@ -13,11 +13,13 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
     public Animator loneWolfAnimator;
     public GameObject loneWolf;
     public CloudThoughts loneWolfCloud;
+
+    public AppearDisappearBehaviour appearDisappearBehaviour;
     
     public GameObject bigSmellTitle;
 
     [UdonSynced, FieldChangeCallback(nameof(synchronizedVariable))]
-    private int _synchronizedVariable = 0;
+    private int _synchronizedVariable = -2;
 
     private string[] teamMemberPhrases = new string[] {
         "Ha riscritto tutto il mio codice senza chiedermelo!",
@@ -27,6 +29,8 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
 
     private float timeBetweenPhrases = 3f;
     private int currentPhraseIndex = 0;
+
+    private bool hasAppeared = false;
 
     void Start()
     {
@@ -86,13 +90,21 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
     }
     private void HandleNormalState()
     {
+        Debug.Log("Normal state");
+        if (!hasAppeared)
+        {
+            appearDisappearBehaviour.Appear();
+            hasAppeared = true;
+        }
         ResetTeamAnimations();
+
         managerAnimator.SetInteger("animVal", teamMembersAnimator.Length);
         SetTeamCloudThoughts(THOUGHT_NONE);
         loneWolf.SetActive(false);
         loneWolfCloud.NoThought();
         bigSmellTitle.SetActive(false);
         loneWolfCloud.setDontCareMeme(false);
+        managerCloudThoughts.NoThought();
     }
 
     private void HandleHappyState()
@@ -232,6 +244,7 @@ public class UnmanagedLoneWolf : UdonSharpBehaviour
         }
     }
 
+    public void metodo0() { synchronizedVariable = 0; }
     public void metodo1() { synchronizedVariable = 1; }
     public void metodo2() { synchronizedVariable = 2; }
     public void metodo3() { synchronizedVariable = 3; }

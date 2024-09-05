@@ -15,11 +15,15 @@ public class SpiralMovement : UdonSharpBehaviour
     public float bobSpeed = 2f;
     public float bobHeight = 0.2f;
     public float proximityToCenter = 1f;
+    public float smoothness = 5f; // Nuovo parametro per controllare la fluidità
 
     private GameObject[] mailObjects;
     private float[] angles;
     private float[] heights;
     private float[] bobOffsets;
+    private Vector3[] velocities;
+    private Vector3[] targetPositions;
+    private Quaternion[] targetRotations;
     private bool isSpiralActive;
 
     void Start()
@@ -39,6 +43,9 @@ public class SpiralMovement : UdonSharpBehaviour
         angles = new float[numberOfMails];
         heights = new float[numberOfMails];
         bobOffsets = new float[numberOfMails];
+        velocities = new Vector3[numberOfMails];
+        targetPositions = new Vector3[numberOfMails];
+        targetRotations = new Quaternion[numberOfMails];
     }
 
     void Update()
@@ -70,6 +77,9 @@ public class SpiralMovement : UdonSharpBehaviour
             {
                 mailObjects[i].SetActive(true);
                 UpdateMailPosition(i);
+                mailObjects[i].transform.localPosition = targetPositions[i];
+                mailObjects[i].transform.localRotation = targetRotations[i];
+                velocities[i] = Vector3.zero;
             }
             else
             {
@@ -110,6 +120,21 @@ public class SpiralMovement : UdonSharpBehaviour
             }
 
             UpdateMailPosition(i);
+
+            // Usa SmoothDamp per un movimento più fluido
+            mailObjects[i].transform.localPosition = Vector3.SmoothDamp(
+                mailObjects[i].transform.localPosition, 
+                targetPositions[i], 
+                ref velocities[i], 
+                1f / smoothness
+            );
+
+            // Interpolazione sferica per la rotazione
+            mailObjects[i].transform.localRotation = Quaternion.Slerp(
+                mailObjects[i].transform.localRotation, 
+                targetRotations[i], 
+                smoothness * Time.deltaTime
+            );
         }
     }
 
@@ -121,31 +146,16 @@ public class SpiralMovement : UdonSharpBehaviour
         float bobY = Mathf.Sin(Time.time * bobSpeed + bobOffsets[index]) * bobHeight;
 
         Vector3 spiralPosition = new Vector3(x, heights[index] + bobY, z);
-        mailObjects[index].transform.localPosition = spiralPosition;
+        targetPositions[index] = spiralPosition;
 
-        mailObjects[index].transform.localRotation = Quaternion.LookRotation(-spiralPosition.normalized);
+        targetRotations[index] = Quaternion.LookRotation(-spiralPosition.normalized);
     }
 
-    public void SetSpiralSpeed(float speed)
-    {
-        spiralSpeed = speed;
-    }
-
-    public void SetSpiralWidth(float width)
-    {
-        spiralWidth = width;
-    }
-
-    public void SetSpiralHeight(float height)
-    {
-        spiralHeight = height;
-    }
-
-    public void SetVerticalSpeed(float speed)
-    {
-        verticalSpeed = speed;
-    }
-
+    // Metodi setter (rimangono invariati)
+    public void SetSpiralSpeed(float speed) { spiralSpeed = speed; }
+    public void SetSpiralWidth(float width) { spiralWidth = width; }
+    public void SetSpiralHeight(float height) { spiralHeight = height; }
+    public void SetVerticalSpeed(float speed) { verticalSpeed = speed; }
     public void SetNumberOfMails(int number)
     {
         if (number > 0 && number != numberOfMails)
@@ -159,19 +169,16 @@ public class SpiralMovement : UdonSharpBehaviour
             }
         }
     }
-
-    public void SetBobSpeed(float speed)
-    {
-        bobSpeed = speed;
-    }
-
-    public void SetBobHeight(float height)
-    {
-        bobHeight = height;
-    }
-
+    public void SetBobSpeed(float speed) { bobSpeed = speed; }
+    public void SetBobHeight(float height) { bobHeight = height; }
     public void SetProximityToCenter(float proximity)
     {
-        proximityToCenter = Mathf.Max(0.1f, proximity); // Assicura che il valore non sia troppo vicino a zero
+        proximityToCenter = Mathf.Max(0.1f, proximity);
+    }
+
+    // Nuovo metodo per regolare la fluidità
+    public void SetSmoothness(float value)
+    {
+        smoothness = Mathf.Max(0.1f, value);
     }
 }
