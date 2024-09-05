@@ -1,12 +1,32 @@
 [
   {
-    "title": "Animation 1",
-    "description": "Description for animation 1.",
+    "title": "Inizio Smell",
+    "description": "Sono tutti felici (manager e team member)",
+    "event": "metodo0"
+  },
+  {
+    "title": "Tutti felici",
+    "description": "Sono tutti felici (manager e team member)",
     "event": "metodo1"
   },
   {
-    "title": "Animation 2",
-    "description": "Description for animation 2.",
+    "title": "Viviana non c'è",
+    "description": "Il manager si accorge che manca Viviana",
     "event": "metodo2"
+  },
+  {
+    "title": "Inizia il malcontento",
+    "description": "I team member si lamentano del comportamento di Viviana",
+    "event": "metodo3"
+  },
+  {
+    "title": "Al Lone Wolf non importa",
+    "description": "Appare il meme di john travolta a simboleggiare che al lone wolf non importa",
+    "event": "metodo4"
+  },
+  {
+    "title": "Fine",
+    "description": "Appare la scritta in grande dello smell",
+    "event": "metodo5"
   }
 ]
