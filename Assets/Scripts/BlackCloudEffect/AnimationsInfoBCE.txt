@@ -1,7 +1,7 @@
 [
   {
-    "title": "Inizio Smell",
-    "description": "Sono tutti felici (manager e team member)",
+    "title": "Setting",
+    "description": "Compaiono project manager e team member",
     "event": "metodo0"
   },
   {
@@ -10,32 +10,32 @@
     "event": "metodo1"
   },
   {
-    "title": "Viviana non c'è",
-    "description": "Il manager si accorge che manca Viviana",
+    "title": "Simboli di muto",
+    "description": "Simboli di muto appaiono, rappresentando l'isolamento e la mancanza di comunicazione tra i membri del team",
     "event": "metodo2"
   },
   {
     "title": "Inizia il malcontento",
-    "description": "I team member si lamentano del comportamento di Viviana",
+    "description": "Documenti svolazzano attorno ai tm, simboleggiando informazioni non condivise e caos",
     "event": "metodo3"
   },
   {
-    "title": "Al Lone Wolf non importa",
-    "description": "Appare il meme di john travolta a simboleggiare che al lone wolf non importa",
+    "title": "Black Cloud",
+    "description": "Un alone scuro avvolge il team, rappresentando la mancanza di conoscenza globale del progetto",
     "event": "metodo4"
   },
   {
-    "title": "Fine",
-    "description": "Appare la scritta in grande dello smell",
+    "title": "Il collo di bottiglia",
+    "description": " Il manager riceve numerosi messaggi dal team, visualizzati graficamente, mentre la scadenza si avvicina",
     "event": "metodo5"
   },
   {
-    "title": "Fine1",
-    "description": "Appare la scritta in grande dello smell",
+    "title": "Messaggi ai team member",
+    "description": "I team member cominciano a ricevere molti messaggi",
     "event": "metodo6"
   },
   {
-    "title": "Fine2",
+    "title": "Fine",
     "description": "Appare la scritta in grande dello smell",
     "event": "metodo7"
   }

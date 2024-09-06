@@ -19,7 +19,7 @@ public class VoiceTextTrigger : UdonSharpBehaviour
     private float textTimer;
 
     public GameObject sceneController;
-    public bool isSceneController = false;
+    
 
     void Start()
     {
@@ -34,10 +34,10 @@ public class VoiceTextTrigger : UdonSharpBehaviour
             followText.gameObject.SetActive(false);
         }
 
-        if (sceneController != null)
+        /*if (sceneController != null)
         {
             sceneController.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
@@ -53,10 +53,10 @@ public class VoiceTextTrigger : UdonSharpBehaviour
                 textTimer = textDisplayDuration;
             }
 
-            if(sceneController != null)
+            /*if(sceneController != null)
             {
                 sceneController.gameObject.SetActive(true);
-            }
+            }*/
 
         }
     }
@@ -72,10 +72,10 @@ public class VoiceTextTrigger : UdonSharpBehaviour
                 followText.gameObject.SetActive(false);
             }
 
-            if(sceneController != null)
+            /*if(sceneController != null)
             {
                 sceneController.gameObject.SetActive(false);
-            }
+            }*/
         }
     }
 

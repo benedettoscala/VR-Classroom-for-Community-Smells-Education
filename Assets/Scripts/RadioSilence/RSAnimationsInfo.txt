@@ -1,27 +1,27 @@
 [
   {
-    "title": "Inizio Smell",
-    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "title": "L'unione fa la forza",
+    "description": "Due manager devono collaborare per un progetto distribuito geograficamente, evidenziando la necessità di una comunicazione strutturata",
     "event": "metodo1"
   },
   {
-    "title": "Pointing",
-    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "title": "Il collo di bottiglia umano",
+    "description": "Giulia viene designata come unico punto di contatto tra i due team, seguendo una politica aziendale che limita la comunicazione orizzontale",
     "event": "metodo2"
   },
   {
-    "title": "Scambio Mail",
-    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "title": "Inizio comunicazione",
+    "description": "Giulia inizia a gestire lo scambio di informazioni tra i due gruppi, fungendo da unico canale di comunicazione",
     "event": "metodo3"
   },
   {
-    "title": "Caos Comunicativo",
-    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "title": "Troppi segnali, un solo ricevitore",
+    "description": "Giulia viene sopraffatta dalla mole di comunicazioni, causando ritardi e inefficienze nel flusso informativo. La deadline viene raggiunta",
     "event": "metodo4"
   },
   {
     "title": "End Smell",
-    "description": "Tizio e Caio cominciano a parlare (non ricordo i loro nomi assurdi)",
+    "description": "Appare titolo smell",
     "event": "metodo5"
   }
 ]
