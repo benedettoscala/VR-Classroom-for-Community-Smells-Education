@@ -40,6 +40,8 @@ public class RadioSilence : UdonSharpBehaviour
 
     private bool hasAppeared = false;
 
+    public AudioSource keyboadTypingSound;
+
     void Start()
     {
         timelineController.SetSliderVisibility(true);
@@ -107,7 +109,7 @@ public class RadioSilence : UdonSharpBehaviour
             appearDisappearBehaviour.Appear();
             hasAppeared = true;
         }
-        
+        keyboadTypingSound.Play();
         spiralMovement.StopSpiral();
         multiEmailExchangeSystem.StopEmailExchange();
 
@@ -242,6 +244,7 @@ public class RadioSilence : UdonSharpBehaviour
     public void EndState()
     {
         CommunicationCaosState();
+        keyboadTypingSound.Stop();
         testoGiganteDiFineSmell.gameObject.SetActive(true);
     }
 

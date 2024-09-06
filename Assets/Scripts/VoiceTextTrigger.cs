@@ -18,6 +18,9 @@ public class VoiceTextTrigger : UdonSharpBehaviour
     private bool isInTrigger = false;
     private float textTimer;
 
+    public GameObject sceneController;
+    public bool isSceneController = false;
+
     void Start()
     {
         localPlayer = Networking.LocalPlayer;
@@ -29,6 +32,11 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         if (followText != null)
         {
             followText.gameObject.SetActive(false);
+        }
+
+        if (sceneController != null)
+        {
+            sceneController.gameObject.SetActive(false);
         }
     }
 
@@ -44,6 +52,12 @@ public class VoiceTextTrigger : UdonSharpBehaviour
                 followText.text = "La tua voce è più forte, sei il presentatore!";
                 textTimer = textDisplayDuration;
             }
+
+            if(sceneController != null)
+            {
+                sceneController.gameObject.SetActive(true);
+            }
+
         }
     }
 
@@ -56,6 +70,11 @@ public class VoiceTextTrigger : UdonSharpBehaviour
             if (followText != null)
             {
                 followText.gameObject.SetActive(false);
+            }
+
+            if(sceneController != null)
+            {
+                sceneController.gameObject.SetActive(false);
             }
         }
     }

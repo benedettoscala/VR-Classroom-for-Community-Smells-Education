@@ -34,6 +34,8 @@ public class Scenes : UdonSharpBehaviour
     public GameObject RSAnimationButtons;
     public GameObject RadioSilenceScene;
 
+    public AppearDisappearBehaviour avatarPedestals;
+
 
     [UdonSynced, FieldChangeCallback(nameof(BCEAnimation))]
     private int _BCEAnimation = 0;
@@ -127,6 +129,27 @@ public class Scenes : UdonSharpBehaviour
         }
     }
 
+    [UdonSynced, FieldChangeCallback(nameof(AvatarPedestalsActive))]
+    
+    private bool _avatarPedestalsActive = false;
+
+    private bool AvatarPedestalsActive
+    {
+        get => _avatarPedestalsActive;
+        set
+        {
+            _avatarPedestalsActive = value;
+            if (_avatarPedestalsActive)
+            {
+                avatarPedestals.Appear();
+            }
+            else
+            {
+                avatarPedestals.Disappear();
+            }
+        }
+    }
+
 
     public void ChangeScene()
     {
@@ -135,6 +158,13 @@ public class Scenes : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         ChangeSceneVariable = !ChangeSceneVariable;
         Debug.Log("ChangeSceneVariable: " + ChangeSceneVariable);
+    }
+
+    public void ActivateAndDeactivateAvatarPedestals()
+    {
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        AvatarPedestalsActive = !AvatarPedestalsActive;
+        Debug.Log("AvatarPedestalsActive: " + AvatarPedestalsActive);
     }
 
     private void ChangeSceneUtil()

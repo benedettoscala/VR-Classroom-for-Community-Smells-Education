@@ -21,6 +21,7 @@ public class Walking : UdonSharpBehaviour
     public bool isWalking = false;
     private bool isLooking = false;
     private bool isFinalLook = false;
+    public Material walkingMaterial;
 
     void Start()
     {
@@ -32,6 +33,10 @@ public class Walking : UdonSharpBehaviour
         {
             Debug.LogError("Number of looking points must match number of walking points!");
         }
+
+        //make the alpha value of walking material 0
+        walkingMaterial.color = new Color(walkingMaterial.color.r, walkingMaterial.color.g, walkingMaterial.color.b, 0);
+        
     }
 
     void Update()

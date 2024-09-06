@@ -23,6 +23,10 @@ public class BlackCloudEffect : UdonSharpBehaviour
     public GameObject RSmartPhone;
     public CloudThoughts[] teamMemberCloudThoughts;
 
+    public AudioSource keyboardSound;
+
+    public AppearDisappearBehaviour appearDisappearBehaviour;
+
     [UdonSynced, FieldChangeCallback(nameof(synchronizedVariable))]
     private int _synchronizedVariable = -1;
 
@@ -40,6 +44,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     void Start()
     {   
+        keyboardSound.Stop();
         setting.SetActive(false);
         slider.SetSliderVisibility(false);
         foreach(GameObject action in actions)
@@ -92,6 +97,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
 
     private void HandleSettingState()
     {
+        appearDisappearBehaviour.Appear();
         managerThoughtsCloud.NoThought();
         foreach(var cloudThought in teamMemberCloudThoughts)
         {
@@ -107,6 +113,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
     {
         ActivateSince(1);
         slider.SetSliderVisibility(true);
+        slider.SetSliderTarget(0.5f);
         text.text = "Mancano 6 giorni alla scadenza della consegna";
         foreach(var cloudThought in teamMemberCloudThoughts)
         {
@@ -116,6 +123,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         managerThoughtsCloud.HappyThought();
         managerAnimator.Play("Pickup", 0, 0);
         SetTeamMemberAnimations("Typing", 0);
+        keyboardSound.Play();
         managerAnimator.SetInteger("phone", 1);
         managerAnimator.SetInteger("text", 0);
         changeAlphaValueCloud(0.1f);
@@ -132,6 +140,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         {
             cloudThought.MuteThought();
         }
+
         changeAlphaValueCloud(0.3f);
         slider.SetSliderVisibility(true);
         slider.SetSliderTarget(0.75f);
@@ -253,6 +262,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
         }
         slider.SetSliderVisibility(true);
         slider.SetSliderTarget(1f);
+        keyboardSound.Stop();
     }
 
     private void ActivateSince(int actionNumber)
