@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Setting",
+    "description": "Compaiono project manager e team member",
+    "event": "metodo0"
+  },
+  {
+    "title": "Tutti felici",
+    "description": "Sono tutti felici (manager e team member)",
+    "event": "metodo1"
+  },
+  {
+    "title": "Simboli di muto",
+    "description": "Simboli di muto appaiono, rappresentando l'isolamento e la mancanza di comunicazione tra i membri del team",
+    "event": "metodo2"
+  },
+  {
+    "title": "Inizia il malcontento",
+    "description": "Documenti svolazzano attorno ai tm, simboleggiando informazioni non condivise e caos",
+    "event": "metodo3"
+  },
+  {
+    "title": "Black Cloud",
+    "description": "Un alone scuro avvolge il team, rappresentando la mancanza di conoscenza globale del progetto",
+    "event": "metodo4"
+  },
+  {
+    "title": "Il collo di bottiglia",
+    "description": " Il manager riceve numerosi messaggi dal team, visualizzati graficamente, mentre la scadenza si avvicina",
+    "event": "metodo5"
+  },
+  {
+    "title": "Messaggi ai team member",
+    "description": "I team member cominciano a ricevere molti messaggi",
+    "event": "metodo6"
+  },
+  {
+    "title": "Fine",
+    "description": "Appare la scritta in grande dello smell",
+    "event": "metodo7"
+  }
+]
