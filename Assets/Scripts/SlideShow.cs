@@ -1,17 +1,15 @@
-﻿using System.Drawing;
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
+using UnityEngine.UI;
 using VRC.SDKBase;
-using Image = UnityEngine.UI.Image;
 
 public class SlideShow : UdonSharpBehaviour
 {   
-
     [UdonSynced, FieldChangeCallback(nameof(currentSlide))]
     private int _currentSlide = 1;
-    public Image nextSlideSlideController;
-    public Image currentSlideSlideController;
-
+    public Image nextSlideImage;
+    public Image currentSlideImage;
+    public Image mainSlideImage;
 
     public int currentSlide
     {
@@ -19,73 +17,51 @@ public class SlideShow : UdonSharpBehaviour
         set
         {
             _currentSlide = value;
-            if (currentSlide > totalSlides)
+            if (_currentSlide > totalSlides)
             {
                 _currentSlide = 1;
             }
-            else if (currentSlide < 1)
+            else if (_currentSlide < 1)
             {
                 _currentSlide = totalSlides;
             }
 
-            GetComponent<Renderer>().material = materials[_currentSlide - 1];
-            currentSlideSlideController.material = materials[_currentSlide - 1];
+            mainSlideImage.sprite = slides[_currentSlide - 1];
+            currentSlideImage.sprite = slides[_currentSlide - 1];
             if(_currentSlide == totalSlides){
-                nextSlideSlideController.material = materials[0];
+                nextSlideImage.sprite = slides[0];
             } else {
-                nextSlideSlideController.material = materials[_currentSlide];
+                nextSlideImage.sprite = slides[_currentSlide];
             }
-            
         }
     }
 
     int totalSlides;
 
-    //array of materials to use as slides
-    public Material[] materials;
-    
+    // Array of sprites to use as slides
+    public Sprite[] slides;
 
     void Start()
     {
-        //apply the first slide to the object
-        GetComponent<Renderer>().material = materials[currentSlide-1];
-        nextSlideSlideController.material = materials[currentSlide];
-        currentSlideSlideController.material = materials[currentSlide-1];
-        //get the total number of slides
-        totalSlides = materials.Length;
-
+        // Apply the first slide
+        mainSlideImage.sprite = slides[currentSlide - 1];
+        nextSlideImage.sprite = slides[currentSlide];
+        currentSlideImage.sprite = slides[currentSlide - 1];
+        // Get the total number of slides
+        totalSlides = slides.Length;
     }
 
-
-    //if the object receives the custom event change slide, it will change the slide
     public void ChangeSlide()
     {   
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
         currentSlide++;
-        //send the current slide int to the network
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
-
         RequestSerialization();
-
-        //change the material of the object based on the current slide
-        //use the current slide to get the material from the array
-        //apply the material to the object
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
-
-        GetComponent<Renderer>().material = materials[currentSlide-1];
-        
-        
-        
     }
 
     public void NextSlide()
     {
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
-
         currentSlide++;
-        //change the material of the object based on the current slide
-        //use the current slide to get the material from the array
-        //apply the material to the object
-        //GetComponent<Renderer>().material = materials[currentSlide-1];
         RequestSerialization();
     }
 
@@ -93,13 +69,6 @@ public class SlideShow : UdonSharpBehaviour
     {
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         currentSlide--;
-
-        //change the material of the object based on the current slide
-        //use the current slide to get the material from the array
-        //apply the material to the object
-        //GetComponent<Renderer>().material = materials[currentSlide-1];
         RequestSerialization();
-
     }
-
 }
