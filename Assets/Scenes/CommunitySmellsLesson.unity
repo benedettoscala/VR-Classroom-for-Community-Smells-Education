@@ -341,7 +341,7 @@ MonoBehaviour:
   - {fileID: 1705815645}
   - {fileID: 1829692755}
   - {fileID: 63015751}
-  - {fileID: 0}
+  - {fileID: 1673395638}
   recipient: {fileID: 1946726082}
   moveSpeed: 5
   lookSpeed: 5
@@ -68036,7 +68036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &2396562336765529802
 MeshRenderer:
   m_ObjectHideFlags: 0
