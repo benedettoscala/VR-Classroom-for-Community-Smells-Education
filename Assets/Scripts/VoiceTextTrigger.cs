@@ -6,7 +6,7 @@ using TMPro;
 
 public class VoiceTextTrigger : UdonSharpBehaviour
 {
-    public float voiceAmplification = 1.5f;
+    public float voiceAmplification = 1000000f;
     public TextMeshProUGUI followText;
     public BoxCollider triggerZone;
     public float textHeight = 2f;
@@ -26,7 +26,7 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         localPlayer = Networking.LocalPlayer;
         if (localPlayer != null)
         {
-            originalVoiceGain = 15f;
+            originalVoiceGain = 25f;
         }
 
         if (followText != null)
@@ -45,11 +45,12 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         if (player == localPlayer)
         {
             isInTrigger = true;
-            localPlayer.SetVoiceGain(voiceAmplification);
+            localPlayer.SetVoiceDistanceNear(voiceAmplification);
+            localPlayer.SetVoiceDistanceFar(voiceAmplification);
             if (followText != null)
             {
                 followText.gameObject.SetActive(true);
-                followText.text = "La tua voce è più forte, sei il presentatore!";
+                followText.text = "La tua voce si sentirà per tutta la stanza, sei il presentatore! (potrebbe non funzionare non l'ho testato)";
                 textTimer = textDisplayDuration;
             }
 
@@ -66,7 +67,8 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         if (player == localPlayer)
         {
             isInTrigger = false;
-            localPlayer.SetVoiceGain(originalVoiceGain);
+            localPlayer.SetVoiceDistanceNear(0);
+            localPlayer.SetVoiceDistanceFar(originalVoiceGain);
             if (followText != null)
             {
                 followText.gameObject.SetActive(false);
