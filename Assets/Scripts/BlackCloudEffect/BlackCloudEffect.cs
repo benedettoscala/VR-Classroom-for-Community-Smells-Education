@@ -172,7 +172,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
     private void HandleAction3State()
     {
         ActivateSince(3);
-        text.text = "Mancano 4 giorno alla scadenza della consegna";
+        text.text = "Mancano 4 giorni alla scadenza della consegna";
         managerThoughtsCloud.ThinkingThought();
         SetTeamMemberAnimations("Confused", 1);
 
@@ -226,7 +226,7 @@ public class BlackCloudEffect : UdonSharpBehaviour
     private void HandleAction6State()
     {
         ActivateSince(6);
-        text.text = "Mancano 1 giorno alla scadenza della consegna";
+        text.text = "Manca 1 giorno alla scadenza della consegna";
         managerThoughtsCloud.ThinkingThought();
         managerAnimator.SetInteger("text", 1);
         
