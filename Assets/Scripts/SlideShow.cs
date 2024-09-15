@@ -9,7 +9,7 @@ public class SlideShow : UdonSharpBehaviour
     private int _currentSlide = 1;
     public Image nextSlideImage;
     public Image currentSlideImage;
-    public Image mainSlideImage;
+    public Image[] mainSlideImages;
 
     public int currentSlide
     {
@@ -26,13 +26,7 @@ public class SlideShow : UdonSharpBehaviour
                 _currentSlide = totalSlides;
             }
 
-            mainSlideImage.sprite = slides[_currentSlide - 1];
-            currentSlideImage.sprite = slides[_currentSlide - 1];
-            if(_currentSlide == totalSlides){
-                nextSlideImage.sprite = slides[0];
-            } else {
-                nextSlideImage.sprite = slides[_currentSlide];
-            }
+            UpdateSlides();
         }
     }
 
@@ -43,12 +37,31 @@ public class SlideShow : UdonSharpBehaviour
 
     void Start()
     {
-        // Apply the first slide
-        mainSlideImage.sprite = slides[currentSlide - 1];
-        nextSlideImage.sprite = slides[currentSlide];
-        currentSlideImage.sprite = slides[currentSlide - 1];
         // Get the total number of slides
         totalSlides = slides.Length;
+
+        // Initial update of slides
+        UpdateSlides();
+    }
+
+    void UpdateSlides()
+    {
+        // Update main slide images
+        for (int i = 0; i < mainSlideImages.Length; i++)
+        {
+            mainSlideImages[i].sprite = slides[_currentSlide - 1];
+        }
+
+        // Update current and next slide previews
+        currentSlideImage.sprite = slides[_currentSlide - 1];
+        if (_currentSlide == totalSlides)
+        {
+            nextSlideImage.sprite = slides[0];
+        }
+        else
+        {
+            nextSlideImage.sprite = slides[_currentSlide];
+        }
     }
 
     public void ChangeSlide()
