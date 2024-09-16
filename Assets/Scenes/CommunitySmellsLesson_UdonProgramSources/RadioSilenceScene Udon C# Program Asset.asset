@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: RadioSilenceScene Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 327112aa126706c4ba69d35ca4b088d4,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 3c9b6e49f1cbf1b469a5dd474c659d3b,
     type: 2}
   udonAssembly: 
   assemblyError: 

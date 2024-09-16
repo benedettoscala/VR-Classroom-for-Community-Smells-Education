@@ -19,6 +19,8 @@ public class VoiceTextTrigger : UdonSharpBehaviour
     private float textTimer;
 
     public GameObject sceneController;
+
+    public Canvas canvas;
     
 
     void Start()
@@ -34,10 +36,10 @@ public class VoiceTextTrigger : UdonSharpBehaviour
             followText.gameObject.SetActive(false);
         }
 
-        /*if (sceneController != null)
+        if (canvas != null)
         {
-            sceneController.gameObject.SetActive(false);
-        }*/
+            canvas.enabled = false;
+        }
     }
 
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
@@ -45,8 +47,7 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         if (player == localPlayer)
         {
             isInTrigger = true;
-            localPlayer.SetVoiceDistanceNear(voiceAmplification);
-            localPlayer.SetVoiceDistanceFar(voiceAmplification);
+            DisableVoiceRolloff(player);
             if (followText != null)
             {
                 followText.gameObject.SetActive(true);
@@ -54,10 +55,10 @@ public class VoiceTextTrigger : UdonSharpBehaviour
                 textTimer = textDisplayDuration;
             }
 
-            /*if(sceneController != null)
+            if (canvas != null)
             {
-                sceneController.gameObject.SetActive(true);
-            }*/
+                canvas.enabled = true;
+            }
 
         }
     }
@@ -67,17 +68,16 @@ public class VoiceTextTrigger : UdonSharpBehaviour
         if (player == localPlayer)
         {
             isInTrigger = false;
-            localPlayer.SetVoiceDistanceNear(0);
-            localPlayer.SetVoiceDistanceFar(originalVoiceGain);
+            EnableVoiceRolloff(player);
             if (followText != null)
             {
                 followText.gameObject.SetActive(false);
             }
 
-            /*if(sceneController != null)
+            if (canvas != null)
             {
-                sceneController.gameObject.SetActive(false);
-            }*/
+                canvas.enabled = false;
+            }
         }
     }
 
@@ -118,5 +118,21 @@ public class VoiceTextTrigger : UdonSharpBehaviour
 
         // Applica la rotazione inversa per far fronte al giocatore
         followText.transform.rotation = lookRotation * Quaternion.Euler(0, 180, 0);
+    }
+
+    private void DisableVoiceRolloff(VRCPlayerApi player)
+    {
+        player.SetVoiceDistanceFar(1000000f);
+        player.SetVoiceDistanceNear(0f);
+        player.SetVoiceGain(15f);
+        Debug.Log("Voice rolloff disabled for local player");
+    }
+
+    private void EnableVoiceRolloff(VRCPlayerApi player)
+    {
+        player.SetVoiceDistanceFar(25f);
+        player.SetVoiceDistanceNear(0f);
+        player.SetVoiceGain(15f);
+        Debug.Log("Voice rolloff enabled for local player");
     }
 }
