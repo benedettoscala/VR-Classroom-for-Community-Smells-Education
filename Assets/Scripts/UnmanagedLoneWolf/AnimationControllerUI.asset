@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AnimationControllerUI
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: c68e289dd679f8e4384cc0ef19a83659,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 890522858cc5b134c81f2a16baa25d40,
     type: 2}
   udonAssembly: 
   assemblyError: 

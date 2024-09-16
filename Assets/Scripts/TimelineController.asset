@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: TimelineController
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: f940e4319e56a89479f0249dd383b8fd,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: d7d0253ebf3aa5c4bb6404f6747975ca,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 63715ddc6a34b1947ab41095581c6da2, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 97e1f43dda0de4e4583146b0f6c44f41, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -398,8 +398,8 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 2
-  serializedProgramAsset: {fileID: 11400000, guid: f0ec3d551bd56fc46a6c6fc2133361ed,
+  _syncMethod: 1
+  serializedProgramAsset: {fileID: 11400000, guid: 32e98ad3164e8984c8fd7882718bfa34,
     type: 2}
   programSource: {fileID: 11400000, guid: c8df303ceb45ae84f85a11591f741734, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgQAAAAAAAAAAi8CAAAAAUoAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAF0AXQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAgAAAAYCAAAAAAAAACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAJwEKAAAAUwB5AG0AYgBvAGwATgBhAG0AZQABCwAAAGoAdQBtAHAASQBtAHAAdQBsAHMAZQAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQAAAEBABwUCMAIAAAADAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAEJAAAAdwBhAGwAawBTAHAAZQBlAGQAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwBpAG4AZwBsAGUALAAgAG0AcwBjAG8AcgBsAGkAYgAfAQUAAABWAGEAbAB1AGUAAAAAQAcFAjACAAAABAAAAAYCAAAAAAAAACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAJwEKAAAAUwB5AG0AYgBvAGwATgBhAG0AZQABCAAAAHIAdQBuAFMAcABlAGUAZAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQAAAIBABwUCMAIAAAAFAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAELAAAAcwB0AHIAYQBmAGUAUwBwAGUAZQBkACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAHwEFAAAAVgBhAGwAdQBlAAAAAEAHBQcFBwU=
@@ -460,7 +460,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 1
   Reliable: 0
   _syncMethod: 1
-  serializedProgramAsset: {fileID: 11400000, guid: 3d0fda5fde99f2e43a0b192c3d68c3d4,
+  serializedProgramAsset: {fileID: 11400000, guid: 08ef2c0f2ba953d43b691a08004c0432,
     type: 2}
   programSource: {fileID: 11400000, guid: 566cc00e27d5822449529a3785eae366, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgQAAAAAAAAAAi8CAAAAAUsAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBCAG8AbwBsAGUAYQBuACwAIABtAHMAYwBvAHIAbABpAGIAXQBdACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgACAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAEUAAAAZABpAHMAYQBiAGwAZQBBAHYAYQB0AGEAcgBTAGMAYQBsAGkAbgBnACcBBAAAAHQAeQBwAGUAARgAAABTAHkAcwB0AGUAbQAuAEIAbwBvAGwAZQBhAG4ALAAgAG0AcwBjAG8AcgBsAGkAYgArAQUAAABWAGEAbAB1AGUAAAcFAjACAAAAAwAAAAYCAAAAAAAAACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAJwEKAAAAUwB5AG0AYgBvAGwATgBhAG0AZQABEwAAAGEAbAB3AGEAeQBzAEUAbgBmAG8AcgBjAGUASABlAGkAZwBoAHQAJwEEAAAAdAB5AHAAZQABGAAAAFMAeQBzAHQAZQBtAC4AQgBvAG8AbABlAGEAbgAsACAAbQBzAGMAbwByAGwAaQBiACsBBQAAAFYAYQBsAHUAZQAABwUCLwMAAAABSgAAAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAC4AVQBkAG8AbgBWAGEAcgBpAGEAYgBsAGUAYAAxAFsAWwBTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAXQBdACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAEAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAENAAAAbQBpAG4AaQBtAHUAbQBIAGUAaQBnAGgAdAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQDNzEw+BwUCMAMAAAAFAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAENAAAAbQBhAHgAaQBtAHUAbQBIAGUAaQBnAGgAdAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQAAAKBABwUHBQcF
@@ -500,7 +500,7 @@ MonoBehaviour:
   - {fileID: 3480278762663400089}
   spawnOrder: 2
   spawnOrientation: 0
-  ReferenceCamera: {fileID: 0}
+  ReferenceCamera: {fileID: 1069902874}
   RespawnHeightY: -100
   ObjectBehaviourAtRespawnHeight: 0
   ForbidUserPortals: 0
@@ -524,10 +524,10 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: ba07ae0f13b04b54b94fc627a46d9082, type: 2}
-  - {fileID: 2100000, guid: 7645fa8292a9d0241a4c459ec8826fc5, type: 2}
-  - {fileID: 2100000, guid: c6f32d647f9a78b49b24aa2812f95c66, type: 2}
-  - {fileID: 2100000, guid: b0d9550e7dd3ad24a8d11666098c2504, type: 2}
+  - {fileID: 2100000, guid: 08c9c000e7be5734f8deb74cdaad42a1, type: 2}
+  - {fileID: 2100000, guid: ba0ce00f728b6754c88ec11fd816d03a, type: 2}
+  - {fileID: 2100000, guid: c552d915b140ab54c940a02966740cbf, type: 2}
+  - {fileID: 2100000, guid: beb445ac0bb849841be82bc496803f6b, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
@@ -580,189 +580,10 @@ MonoBehaviour:
   RenderReflectionBounces: 0
   RenderReflectionIntensity: 0
   RenderSkybox: {fileID: 0}
-  NetworkIDs:
-  - gameObject: {fileID: 0}
-    ID: 10
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 11
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 12
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 13
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 14
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 15
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 16
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 17
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 18
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 19
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 20
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 21
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 22
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 23
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 24
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 25
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 26
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 27
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 28
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 29
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 30
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 31
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 32
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 33
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 34
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 35
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 36
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 37
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 38
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 39
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 40
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 41
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 42
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 43
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 44
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 45
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 46
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 47
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 48
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 49
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 50
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 51
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 52
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 53
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 54
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 55
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 56
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 57
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 58
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 59
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 60
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 61
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 62
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 63
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 64
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 65
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 66
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 67
-    SerializedTypeNames: []
-  - gameObject: {fileID: 0}
-    ID: 68
-    SerializedTypeNames: []
-  - gameObject: {fileID: 3480278762663670689}
-    ID: 69
-    SerializedTypeNames: []
+  NetworkIDs: []
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  NavigationAreas: []
 --- !u!64 &7606902903243430482
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -832,7 +653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0d9550e7dd3ad24a8d11666098c2504, type: 2}
+  - {fileID: 2100000, guid: beb445ac0bb849841be82bc496803f6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
