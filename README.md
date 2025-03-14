@@ -7,16 +7,19 @@
 ## Features
 
 ### Teacher Controls 🎤
+
 - **Manage avatar animations** to depict various community smells.
 - **Switch environments** between an office and a classroom.
 - **Control slide presentations** on a virtual board.
 - **Engage with students** via voice chat.
 
 ### Student Interactions 🧑‍🎓
+
 - **Sit in designated seats** to experience the lecture.
 - **Communicate via voice chat** with the teacher and peers.
 
 ### Community Smells Visualized 🎭
+
 - **Organizational Silo** – Isolated subgroups limiting collaboration.
 - **Lone Wolf** – Individuals working independently, detached from the team.
 - **Black Cloud Effect** – Negative influence affecting the entire group.
@@ -34,16 +37,26 @@
 ## Usage 🚀
 
 ### Running in Unity
+
 1. If the scene doesn't load, navigate to the **scene directory** and open `CommunitySmellsLesson.unity`.
 2. Click the **Play** button in Unity to start the project in debug mode.
 
 ### Deploying in VRChat
-1. Open **VRChat SDK** and go to **Show Control Panel**.
-2. Log in with your **VRChat account** (required for uploading content).
-3. Navigate to the **Builder** tab and select **Build & Test New Build**.
-4. To publish the project online, ensure your VRChat account meets the necessary permissions. More details are available in the [VRChat documentation](https://docs.vrchat.com/).
+
+1. Ensure **VRChat** is installed via **Steam** or **Meta** and has been launched at least once.
+2. Open **VRChat SDK** and go to **Show Control Panel**.
+3. Log in with your **VRChat account** (required for uploading content).
+4. Navigate to the **Builder** tab and select **Build & Test New Build**.
+5. To publish the project online, ensure your VRChat account meets the necessary permissions. More details are available in the [VRChat documentation](https://docs.vrchat.com/).
+
+## Ready-to-Use Classroom 🎮
+
+The virtual classroom is already available on VRChat servers! You can access it directly via the following link:
+
+🔗 [VRChat Classroom](https://vrchat.com/home/world/wrld_357a500a-2867-45d1-9c9f-f1b08d6be309/info)
 
 ## Project Structure 📁
+
 ```
 CommunitySmellsLesson/
 ├── Assets/              # Unity assets (slides, scripts, audio, animations, prefabs)
@@ -54,11 +67,14 @@ CommunitySmellsLesson/
 ```
 
 ## Contributing 🤝
+
 We welcome contributions! Feel free to open an **issue** or submit a **pull request** to enhance the project.
 
 ## License 📜
+
 This project is licensed under the **MIT License**.
 
 ## Contact ✉️
+
 For inquiries or collaboration opportunities, please reach out via [your contact information].
 
