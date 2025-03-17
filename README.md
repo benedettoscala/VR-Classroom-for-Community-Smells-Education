@@ -22,9 +22,19 @@
 
 - **Organizational Silo** – Isolated subgroups limiting collaboration.
 - **Lone Wolf** – Individuals working independently, detached from the team.
-- **Black Cloud Effect** – Negative influence affecting the entire group.
+- **Black Cloud Effect** – A negative influence affecting the entire group.
 
-## Installation 🛠️
+## Prerequisites
+
+You need to have an installation of **VRChat** (either through **Steam** or the **Meta platform**).
+
+## Ready-to-Use Classroom 🎮
+
+The virtual classroom is already available on VRChat servers! You can access it directly via the following link:
+
+📞 [VRChat Classroom](https://vrchat.com/home/world/wrld_357a500a-2867-45d1-9c9f-f1b08d6be309/info)
+
+## How to Contribute 🚀 🛠️
 
 1. Clone the repository:
    ```sh
@@ -34,7 +44,7 @@
 3. If prompted with import issues, select **Ignore**.
 4. Install any missing dependencies when prompted.
 
-## Usage 🚀
+All modifiable elements (scripts, animations, and more) are located in the **Assets** folder.
 
 ### Running in Unity
 
@@ -43,17 +53,10 @@
 
 ### Deploying in VRChat
 
-1. Ensure **VRChat** is installed via **Steam** or **Meta** and has been launched at least once.
-2. Open **VRChat SDK** and go to **Show Control Panel**.
-3. Log in with your **VRChat account** (required for uploading content).
-4. Navigate to the **Builder** tab and select **Build & Test New Build**.
-5. To publish the project online, ensure your VRChat account meets the necessary permissions. More details are available in the [VRChat documentation](https://docs.vrchat.com/).
-
-## Ready-to-Use Classroom 🎮
-
-The virtual classroom is already available on VRChat servers! You can access it directly via the following link:
-
-🔗 [VRChat Classroom](https://vrchat.com/home/world/wrld_357a500a-2867-45d1-9c9f-f1b08d6be309/info)
+1. Open **VRChat SDK** and go to **Show Control Panel**.
+2. Log in with your **VRChat account** (required for uploading content).
+3. Navigate to the **Builder** tab and select **Build & Test New Build**.
+4. To publish the project online, ensure your VRChat account meets the necessary permissions. More details are available in the [VRChat documentation](https://docs.vrchat.com/).
 
 ## Project Structure 📁
 
@@ -70,11 +73,10 @@ CommunitySmellsLesson/
 
 We welcome contributions! Feel free to open an **issue** or submit a **pull request** to enhance the project.
 
-## License 📜
+## License 🐟
 
 This project is licensed under the **MIT License**.
 
 ## Contact ✉️
 
 For inquiries or collaboration opportunities, please reach out via [your contact information].
-
