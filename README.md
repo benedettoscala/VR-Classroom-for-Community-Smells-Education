@@ -1,8 +1,8 @@
-# CommunitySmellsLesson
+# VR Classroom for Community Smells Education
 
 ## Overview 🎓
 
-**CommunitySmellsLesson** is a Unity-based project that leverages **VRChat** to create an interactive classroom environment. This virtual classroom is designed for experiments detailed in [Paper Name], enhancing education through **3D avatars**, **animations**, and **community smell visualizations**. 🖥️
+**VR Classroom for Community Smells Education** is a Unity-based project that leverages **VRChat** to create an interactive classroom environment. This virtual classroom is designed for experiments detailed in [Paper Name], enhancing education through **3D avatars**, **animations**, and **community smell visualizations**. 🖥️
 
 ## Features
 
