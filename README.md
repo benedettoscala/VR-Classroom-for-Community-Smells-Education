@@ -38,7 +38,7 @@ The virtual classroom is already available on VRChat servers! You can access it 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/benedettoscala/CommunitySmellsLesson.git
+   git clone https://github.com/benedettoscala/VR-Classroom-for-Community-Smells-Education.git
    ```
 2. Open the project in **Unity 2022.3.22f1** (recommended).
 3. If prompted with import issues, select **Ignore**.
