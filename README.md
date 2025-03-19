@@ -2,7 +2,7 @@
 
 ## Overview 🎓
 
-**VR Classroom for Community Smells Education** is a Unity-based project that leverages **VRChat** to create an interactive classroom environment. This virtual classroom is designed for experiments detailed in _The Good and the Bad of Teaching Social Debt and Community Smells Using Virtual Reality_, enhancing education through **3D avatars**, **animations**, and **community smell visualizations**. 🖥️
+**VR Classroom for Community Smells Education** is a Unity-based project that leverages **VRChat** to create an interactive classroom environment. This virtual classroom is designed for experiments detailed in "_The Good and the Bad of Teaching Social Debt and Community Smells Using Virtual Reality_" paper, enhancing education through **3D avatars**, **animations**, and **community smell visualizations**. 🖥️
 
 ## Features
 
