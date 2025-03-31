@@ -68,7 +68,9 @@ CommunitySmellsLesson/
 ├── Assets/                              # Unity assets (slides, scripts, audio, animations, prefabs)
 ├── EmpiricalExperimentMaterial/         # Experimental data used for the experiment
 ├  ├── StatisticalAnalysis/
-├  ├── Ethical Approval/ 
+├  ├── Ethical Approval/
+├  ├── Questionnaire/
+├  ├── Slides/ 
 ├── Packages/                            # Package dependencies and external libraries
 ├── ProjectSettings/                     # Unity project settings and configurations
 ├── README.md                            # Project documentation
