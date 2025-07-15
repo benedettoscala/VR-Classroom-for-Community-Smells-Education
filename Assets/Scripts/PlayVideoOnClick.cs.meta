@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8f457a455c3b949c389b36edac3c8312
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - videoPlayer: {instanceID: 0}
+  - playButton: {instanceID: 0}
+  - renderTexture: {fileID: 8400000, guid: aa97100a644bb430184730b89c69dddf, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
