@@ -68,6 +68,7 @@ CommunitySmellsLesson/
 ├── Assets/                              # Unity assets (slides, scripts, audio, animations, prefabs)
 ├── EmpiricalExperimentMaterial/         # Experimental data used for the experiment
 ├  ├── StatisticalAnalysis/
+├  ├── Immersive Scenarios Storyboard/
 ├  ├── Ethical Approval/
 ├  ├── Questionnaire/
 ├  ├── Slides/ 
